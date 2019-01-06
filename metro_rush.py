@@ -229,7 +229,7 @@ class PathFinding(Graph):
 
     def dijkstra(self):
         
-        # get a copy of node list to traverse inside
+        # get a copy of node list as unvisited list 
         nodes = self.nodes.copy()
         
         # initial value of distance is infinity for all nodes
@@ -238,45 +238,53 @@ class PathFinding(Graph):
         # total distance is zero for the starting node
         distances[self.source] = 0
         
-        previous_nodes = {
-            node: None for node in self.nodes
-        }
+        # initial edge of all nodes
+        previous_nodes = {node: None for node in self.nodes}
 
-        # run loops until node list is empty
+        # run loops until unvisited node list is empty
         while nodes:
 
             # choose the node with minimum distance
             current_node = min(
                 nodes, key=lambda node: distances[node])
             
-            # remove the chosen node from node list
+            # remove the chosen node from unvisited node list
             nodes.remove(current_node)
 
-            # if 
+            # if minimum distance is infinity -> skip  
             if distances[current_node] == float('inf'):
                 break
 
+            # Find neighbour of the current node
+            # Calculate distance to that neighbour
             for neighbour, weight in self.neighbours[current_node]:
                 alternative_route = distances[current_node] + weight
+
+                # set the distance to the neighbour as 
+                # the minimum distance from current node to all its neighbours
                 if alternative_route < distances[neighbour]:
                     distances[neighbour] = alternative_route
+
+                    # show way from the current_node to the neighbour node
                     previous_nodes[neighbour] = current_node
+
 
         path, current_node = deque(), self.dest
 
+        # get the path 
         while previous_nodes[current_node] is not None:
             path.appendleft(current_node)
             current_node = previous_nodes[current_node]
 
+        # add the end node
         if path:
             path.appendleft(current_node)
 
         return path
 
 
-class Algo1(Graph):
+class Algo1:
     def __init__(self, filename):
-        super().__init__(filename)
         path = PathFinding(filename)
         self.shortest_path = path.dijkstra()
     
