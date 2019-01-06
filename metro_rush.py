@@ -227,7 +227,7 @@ class PathFinding(Graph):
 
         return neighbours
 
-    def dijkstra(self):
+    def find_shortest_path(self):
         
         # get a copy of node list as unvisited list 
         nodes = self.nodes.copy()
@@ -285,8 +285,8 @@ class PathFinding(Graph):
 
 class Algo1:
     def __init__(self, filename):
-        path = PathFinding(filename)
-        self.shortest_path = path.dijkstra()
+        graph = PathFinding(filename)
+        self.shortest_path = graph.find_shortest_path()
     
     def execution(self):
         print(self.shortest_path)
