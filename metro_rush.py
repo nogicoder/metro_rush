@@ -170,15 +170,14 @@ class Edge:
 
 class PathFinding(Graph):
 
-    def __init__(self, filename, edges, start, end):
+    def __init__(self, filename):
         super().__init__(filename)
-        edges = self.transform_pair(edges)
+        edges = self.transform_pair(self.node_list)
         self.edges = [Edge(start, end, weight) for start, end, weight in edges]
-        self.source = self.get_station_name(start)
-        self.dest = self.get_station_name(end)
+        self.source = self.get_station_name(self.start)
+        self.dest = self.get_station_name(self.end)
         
-        
-
+    # get the name of the starting and ending station 
     def get_station_name(self, station):
         for line in self.line_list:
             if line.name == station[0]:
@@ -186,6 +185,7 @@ class PathFinding(Graph):
                     if id == station[1]:
                         return station_name
 
+    # get list of nodes
     @property
     def nodes(self):
 
@@ -194,6 +194,7 @@ class PathFinding(Graph):
             result += [edge.start, edge.end]
         return set(result)
 
+    # add alternative pairs for undirected graph
     def transform_pair(self, edges):
 
         result = []
@@ -202,25 +203,21 @@ class PathFinding(Graph):
             result.append((n2, n1, weight))
         return result
 
-    def get_node_pairs(self, n1, n2):
-
-        return [[n1, n2], [n2, n1]]
-
+    # remove edge from edge list
     def remove_edge(self, n1, n2):
 
-        node_pairs = self.get_node_pairs(n1, n2)
-        edges = self.edges[:]
-        for edge in edges:
+        node_pairs = [[n1, n2], [n2, n1]]
+        for edge in self.edges:
             if [edge.start, edge.end] in node_pairs:
                 self.edges.remove(edge)
 
-    def add_edge(self, n1, n2, weight=1):
+    # add edge to edge list
+    def add_edge(self, n1, n2, weight):
 
-        node_pairs = self.get_node_pairs(n1, n2)
-        self.edges.append(Edge(start=n1, end=n2, weight=weight))
-        if both_ends:
-            self.edges.append(Edge(start=n2, end=n1, weight=weight))
+        self.edges += [Edge(start=n1, end=n2, weight=weight),
+                       Edge(start=n2, end=n1, weight=weight)]
 
+    # Find the neighbour of a node
     @property
     def neighbours(self):
 
@@ -231,42 +228,56 @@ class PathFinding(Graph):
         return neighbours
 
     def dijkstra(self):
-        source = self.source
-        dest = self.dest
         
-        inf = float('inf')
-        distances = {node: inf for node in self.nodes}
+        # get a copy of node list to traverse inside
+        nodes = self.nodes.copy()
+        
+        # initial value of distance is infinity for all nodes
+        distances = {node: float('inf') for node in self.nodes}
+        
+        # total distance is zero for the starting node
+        distances[self.source] = 0
+        
         previous_nodes = {
             node: None for node in self.nodes
         }
-        distances[source] = 0
-        nodes = self.nodes.copy()
 
+        # run loops until node list is empty
         while nodes:
+
+            # choose the node with minimum distance
             current_node = min(
                 nodes, key=lambda node: distances[node])
+            
+            # remove the chosen node from node list
             nodes.remove(current_node)
-            if distances[current_node] == inf:
+
+            # if 
+            if distances[current_node] == float('inf'):
                 break
+
             for neighbour, weight in self.neighbours[current_node]:
                 alternative_route = distances[current_node] + weight
                 if alternative_route < distances[neighbour]:
                     distances[neighbour] = alternative_route
                     previous_nodes[neighbour] = current_node
 
-        path, current_node = deque(), dest
+        path, current_node = deque(), self.dest
+
         while previous_nodes[current_node] is not None:
             path.appendleft(current_node)
             current_node = previous_nodes[current_node]
+
         if path:
             path.appendleft(current_node)
+
         return path
 
 
 class Algo1(Graph):
     def __init__(self, filename):
         super().__init__(filename)
-        path = PathFinding(filename, self.node_list, self.start, self.end)
+        path = PathFinding(filename)
         self.shortest_path = path.dijkstra()
     
     def execution(self):
