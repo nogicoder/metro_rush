@@ -1,5 +1,5 @@
 from collections import OrderedDict
-
+from sys import stderr
 """
 Modeling system by using GRAPH-PLAN method
 
@@ -94,6 +94,9 @@ class Train:
             raise ValueError("{} does not pass through "
                              "station {}".format(self.line, self.station))
 
+    def __str__(self):
+        return 'Train #{}: {} station, {}'.format(self.id, self.station, self.line)
+
 
 class Line:
     def __init__(self, name):
@@ -109,6 +112,10 @@ class Line:
             next_idx = len(self._stationtoidx) + 1
             self._stationtoidx[station] = next_idx
             self._idxtostation[next_idx] = station
+
+    def print_stations(self):
+        for station, idx in self._stationtoidx.items():
+            print('{}: {}'.format(idx, station))
 
     def __getitem__(self, idx):
         return self._idxtostation[idx]
@@ -140,30 +147,98 @@ class Line:
 class Metro:
     def __init__(self, name):
         self.name = name
-        self.trains = []
-        self.lines = []
-        self.stations = []
-        self.transferpoints = []
-        self.actionlist = []
+        self.trains = {}
+        self.lines = {}
+        self.stations = {}
+        self.transferpoints = {}
         self.turns = 0
+        self.start = None
+        self.stop = None
 
     def build_graph(self, filename):
-        raise NotImplemented
+        try:
+            line = None
+            with open(filename, 'r') as f:
+                for row in f:
+                    row = row.rstrip()
+                    # get name of Line and create a Line instance
+                    if row.startswith('#'):
+                        line_name = row[1:]
+                        if line_name not in self.lines:
+                            line = Line(line_name)
+                            self.lines[line_name] = line
+                        else:
+                            line = self.lines[line_name]
 
-    def update(self):
+                    # get the starting station's linename and id
+                    elif row.startswith('START='):
+                        s_line, s_id = [arg.strip() for arg in row[6:].split(':')]
+                        self.start = self.lines[s_line][int(s_id)]
+                        self.start.max_trains = float('inf')
+
+                    # get the ending station's linename and id
+                    elif row.startswith('END='):
+                        e_line, e_id = [arg.strip() for arg in row[4:].split(':')]
+                        self.stop = self.lines[e_line][int(e_id)]
+                        self.stop.max_trains = float('inf')
+
+                    elif row.startswith('TRAINS='):
+                        num_trains = int(row[7:].strip())
+
+                    # get the station name and create a Station instance
+                    elif len(row) != 0:
+                        args = [arg.strip() for arg in row.split(':')]
+                        if args[0].isdigit():
+                            if len(args) == 2:
+                                station_id, station_name = args
+                                new_station = Station(station_name, line)
+                                line.add_station(new_station)
+                                self.stations[station_name] = new_station
+
+                                # check station id
+                                if line.get_station_idx(new_station) != int(station_id):
+                                    raise ValueError("invalid station id")
+
+                            elif len(args) == 4:
+                                station_id, station_name, _, line_2_name = args
+                                new_station = Station(station_name, line)
+                                self.stations[station_name] = new_station
+                                self.transferpoints[station_name] = new_station
+                                if line_2_name not in self.lines:
+                                    self.lines[line_2_name] = Line(line_2_name)
+
+                                new_station.add_line(self.lines[line_2_name])
+                                line.add_station(new_station)
+
+            for i in range(num_trains):
+                new_train = Train(i + 1, self.lines[s_line], int(s_id))
+                self.start.add_train(new_train)
+                self.trains[i + 1] = new_train
+
+        except (FileNotFoundError, NameError, ValueError) as e:
+            # print(e)
+            stderr.write("Invalid File")
+
+    def update(self, actionlist):
         """
-        Update system state for 1 step
+        Execute all actions in one turn
+        :param actionlist: list of actions
         """
-        for action in self.actionlist[self.turns]:
+        for action in actionlist:
             action.execute()
         self.turns += 1
 
-    def run(self):
+    def print_train_location(self, train_id):
         """
-        Run all steps in actionlist
+        train_id = -1, print all train
+        otherwise, print train by its id
         """
-        while self.turns < len(self.actionlist):
-            self.update()
+
+        if train_id != -1:
+            print(self.trains[train_id])
+        else:
+            for train in self.trains.values():
+                print(train)
 
 
 # define action
