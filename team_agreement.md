@@ -47,3 +47,7 @@
         + The core algorithm: Train moving along 1 path with subsequence train lining up
         + The bonus algorithm: Solving the case when there are multiple stations before the ending stations -> no bottleneck
         + Pyglet representation of the train moving and metro system, based on the objects and actions defined in the previous features
+        Note: 
+                + Handle cases of data file that might lead to error
+                + Test cases for each code blocks (consider doctest)
+                + Handle argument passing for multi algo options and custom max_train numbers
