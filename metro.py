@@ -233,12 +233,28 @@ class Metro:
         train_id = -1, print all train
         otherwise, print train by its id
         """
+        """
+        <station_name>(<line_name>:<station_id>)-<train_label>
+        Tagore Garden(Blue Line:18)-T15
+
+        """
+        # if train_id != -1:
+        #     print(self.trains[train_id])
+        # else:
+        #     for train in self.trains.values():
+        #         print(train)
 
         if train_id != -1:
-            print(self.trains[train_id])
+            trains = [self.trains[train_id]]
         else:
-            for train in self.trains.values():
-                print(train)
+            trains = list(self.trains.values())
+
+        for train in trains:
+            train_id = train.id
+            line = train.line
+            station = train.station
+            station_id = line.get_station_idx(station)
+            print("{}({}:{})-T{}".format(station.name, line.name, station_id, train_id))
 
 
 # define action
