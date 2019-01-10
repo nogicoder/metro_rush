@@ -38,10 +38,18 @@
                 _CONTENT_ : Building the Skeleton and elements of the project
                 _DISCUSSION_ :
                     + WORK ALLOCATION FOR THE PROJECT:
-                        (-) mbach: Applied Dijkstra for the shortest path -> adapt to the script structure
+                        (-) mbach: Finished shortest path -> adapt to the script structure
                         (-) vnam: Finished the representation for metro system through Pyglet -> visualizing Train
                         (-) nlequan: Finished the skeleton -> Employing the movement of the train and printing out result
                 _DEADLINE: Thu Jan 10/2019
+        + Date: Thu Jan 10/2019 - 3rd => *MEMBERS*: MBACH, VNAM, NLEQUAN JOINED THE MEETING
+                _CONTENT_ : Applying Algorithm to direct the trains & Pyglet description of train movement
+                _DISCUSSION_ :
+                    + WORK ALLOCATION FOR THE PROJECT:
+                        (-) mbach: Finished adaptation -> Pyglet and adding test cases
+                        (-) vnam: Visualizing Train
+                        (-) nlequan: Finished train movement -> Employing algorithm
+                _DEADLINE: Sat Jan 12/2019
 
 6. The features you want to implement and how they interface together:
         + The core algorithm: Train moving along 1 path with subsequence train lining up
