@@ -94,7 +94,7 @@
 33:Indraprastha
 34:Yamuna Bank
 35:Akshardham
-36:Mayur Vihar Phase-1
+36:Mayur Vihar-1
 37:Mayur Vihar Extention
 38:New Ashok Nagar
 39:Noida Sector-15
@@ -188,6 +188,10 @@
 16:INA:Conn: Yellow Line
 17:South Extension
 18:Lajpat Nagar:Conn: Violet Line
+#Green Line
+1:Inderlok:Conn: Red Line
+2:Ashok Park Main
+3:Kirti Nagar:Conn: Blue Line
 
 START=Red Line:15
 END=Blue Line:36
