@@ -103,6 +103,7 @@ class Train:
 
 
 class Line:
+
     def __init__(self, name):
         self.name = name
         self._stationtoidx = OrderedDict()
@@ -147,6 +148,7 @@ class Line:
     def __eq__(self, other):
         return self.name == other.name
 
+    __repr__ = __str__
 
 class PathFinding: # """UPDATE"""
 
@@ -154,6 +156,7 @@ class PathFinding: # """UPDATE"""
         self.edges = self.make_edges(edges)
         self.start = start
         self.stop = stop
+        self.path = self.find_shortest_path()
 
     @property
     def nodes(self):
@@ -244,8 +247,8 @@ class Metro:
 
         self.build_graph('delhi')
         self.edges = self.get_edges()
-        self.path = PathFinding(self.edges, self.start, self.stop).find_shortest_path()
-
+        self.path = self.convert_path()
+        
     def build_graph(self, filename):
         try:
             
@@ -345,7 +348,7 @@ class Metro:
                              line_object._stationtoidx[temp[i]])
                 edges.append((temp[i - 1], temp[i], weight))
         return edges
-        
+
     def update(self, actionlist):
         """
         Execute all actions in one turn
@@ -355,6 +358,32 @@ class Metro:
             action.execute()
         self.turns += 1
 
+    def convert_path(self):
+        full_path = []
+        path = PathFinding(self.edges, self.start, self.stop).path
+        for i in range(1, len(path)):
+            station1 = path[i - 1]
+            station2 = path[i]
+            for line in self.lines.values():
+                route = []
+                if station1 in line._stationtoidx and station2 in line._stationtoidx:
+                    idx1 = line._stationtoidx[station1]
+                    idx2 = line._stationtoidx[station2]
+                    if idx1 > idx2:
+                        for idx in range(idx2, idx1 + 1):
+                            new_station = line._idxtostation[idx]
+                            route.append(new_station)
+                        route=[station1] + list(reversed(route[1:-1])) + [station2]
+                    elif idx2 > idx1:
+                        for idx in range(idx1, idx2 + 1):
+                            new_station = line._idxtostation[idx]
+                            if new_station not in full_path:
+                                route.append(new_station)
+                for station in route:
+                    if station not in full_path:
+                        full_path.append(station)
+
+        return full_path
 
     def print_train_location(self, train_id):
         """
