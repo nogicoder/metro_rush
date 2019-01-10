@@ -326,27 +326,6 @@ class Metro:
             # print(e)
             stderr.write("Invalid File")
 
-    def update(self, actionlist):
-        """
-        Execute all actions in one turn
-        :param actionlist: list of actions
-        """
-        for action in actionlist:
-            action.execute()
-        self.turns += 1
-
-    def print_train_location(self, train_id):
-        """
-        train_id = -1, print all train
-        otherwise, print train by its id
-        """
-
-        if train_id != -1:
-            print(self.trains[train_id])
-        else:
-            for train in self.trains.values():
-                print(train)
-
     def get_edges(self):  # """UPDATE"""
         nodes = self.transferpoints.copy()
         edges = []
@@ -359,12 +338,51 @@ class Metro:
             for name, station in nodes.items():
                 if station in line_object._stationtoidx:
                     temp.append(station)
-            temp = sorted(temp, key=lambda station: line_object._stationtoidx[station])
+            temp = sorted(
+                temp, key=lambda station: line_object._stationtoidx[station])
             for i in range(1, len(temp)):
                 weight = abs(line_object._stationtoidx[temp[i - 1]] -
                              line_object._stationtoidx[temp[i]])
                 edges.append((temp[i - 1], temp[i], weight))
         return edges
+        
+    def update(self, actionlist):
+        """
+        Execute all actions in one turn
+        :param actionlist: list of actions
+        """
+        for action in actionlist:
+            action.execute()
+        self.turns += 1
+
+
+    def print_train_location(self, train_id):
+        """
+        train_id = -1, print all train
+        otherwise, print train by its id
+        """
+        """
+        <station_name>(<line_name>:<station_id>)-<train_label>
+        Tagore Garden(Blue Line:18)-T15
+        """
+        # if train_id != -1:
+        #     print(self.trains[train_id])
+        # else:
+        #     for train in self.trains.values():
+        #         print(train)
+
+        if train_id != -1:
+            trains = [self.trains[train_id]]
+        else:
+            trains = list(self.trains.values())
+
+        for train in trains:
+            train_id = train.id
+            line = train.line
+            station = train.station
+            station_id = line.get_station_idx(station)
+            print("{}({}:{})-T{}".format(station.name,
+                                         line.name, station_id, train_id))
 
 
 # define action
