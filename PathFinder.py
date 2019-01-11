@@ -3,10 +3,10 @@ from collections import deque, namedtuple
 
 class PathFinding:  # """UPDATE"""
 
-    def __init__(self, edges, start, stop):
-        self.edges = self.make_edges(edges)
-        self.start = start
-        self.stop = stop
+    def __init__(self, metro):
+        self.edges = self.make_edges(metro.edges)
+        self.start = metro.start
+        self.stop = metro.stop
         self.path = self.find_shortest_path()
 
     @property

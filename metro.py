@@ -166,7 +166,6 @@ class Metro:
 
         self.build_graph('delhi')
         self.edges = self.get_edges()
-        self.path, self.cost = PathFinding(self.edges, self.start, self.stop).path
         # self.converted_path = self.convert_path(self.path)
         
     def build_graph(self, filename):
