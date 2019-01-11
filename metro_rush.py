@@ -7,6 +7,8 @@ def main():
     metro = Metro('Delhi')
     metro.build_graph('delhi')
     path, cost = PathFinding(metro).path
-    print((path, cost))
+    return (path, cost)
+        
 
-main()
+if __name__ =='__main__':
+    main()

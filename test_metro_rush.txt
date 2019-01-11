@@ -1,0 +1,3 @@
+>>> from metro_rush import *
+>>> main()
+(deque([Keshav Puram, Inder Lok, Kashmere Gate, Mandi House, Mayur Vihar-1]), 17)

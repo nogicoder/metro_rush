@@ -1,0 +1,13 @@
+>>> from metro import *
+>>> station = Station('Delhi', 'Red Line')
+>>> print(type(station))
+<class 'metro.Station'>
+>>> station.add_train('T1')
+>>> station.add_train('T2')
+Traceback (most recent call last):
+...
+ValueError: The station already reach its capacity limit 1
+>>> station.remove_train('T1')
+>>> print(station.trains)
+set()
+>>> station.remove_train('T3')
