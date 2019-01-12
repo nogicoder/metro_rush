@@ -244,8 +244,7 @@ class Metro:
                 self.start.add_train(new_train) # add trains to the starting station
                 self.trains[i + 1] = new_train # add trains to the train dict based on id
 
-        except (FileNotFoundError, NameError, ValueError) as e:
-            # print(e)
+        except (FileNotFoundError, NameError, ValueError):
             stderr.write("Invalid File")
 
     def get_edges(self):  # """UPDATE"""
@@ -384,8 +383,3 @@ class MoveTrain:
         return '[move] train {} from {} to {}'.format(self.train.id,
                                                       self.station_1.name,
                                                       self.station_2.name)
-
-
-if __name__ == '__main__':
-    metro = Metro('Delhi')
-    print((metro.path, metro.cost))

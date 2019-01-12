@@ -3,8 +3,8 @@ from collections import deque, namedtuple
 
 class PathFinding:  # """UPDATE"""
 
-    def __init__(self, metro):
-        self.edges = self.make_edges(metro.edges)
+    def __init__(self, metro, alt=0):
+        self.edges = self.make_edges(metro.edges, alt)
         self.start = metro.start
         self.stop = metro.stop
         self.path = self.find_shortest_path()
@@ -13,8 +13,13 @@ class PathFinding:  # """UPDATE"""
     def nodes(self):
         return set(sum(([start, end] for start, end, _ in self.edges), []))
 
-    def make_edges(self, edges):
+    def make_edges(self, edges, alt):
         edge_list = []
+        if alt == 1:
+            temp = ('Kashmere Gate', 'Mandi House', 5)
+            for i, item in enumerate(edges):
+                if item[0].name == temp[0] and item[1].name == temp[1]:
+                    edges[i] = (item[0], item[1], 7)
         Edge = namedtuple('Edge', 'start, end, weight')
         for start, end, weight in edges:
             edge_list.append(Edge(start, end, weight))
