@@ -166,7 +166,6 @@ class Metro:
 
         self.build_graph('delhi')
         self.edges = self.get_edges()
-        # self.converted_path = self.convert_path(self.path)
         
     def build_graph(self, filename):
         try:
@@ -275,33 +274,6 @@ class Metro:
         for action in actionlist:
             action.execute()
         self.turns += 1
-
-    def convert_path(self):
-        full_path = []
-        path = PathFinding(self.edges, self.start, self.stop).path
-        print(path)
-        for i in range(1, len(path)):
-            station1 = path[i - 1]
-            station2 = path[i]
-            for line in self.lines.values():
-                route = []
-                if station1 in line._stationtoidx and station2 in line._stationtoidx:
-                    idx1 = line._stationtoidx[station1]
-                    idx2 = line._stationtoidx[station2]
-                    if idx1 > idx2:
-                        for idx in range(idx2, idx1 + 1):
-                            new_station = line._idxtostation[idx]
-                            route.append((new_station, line))
-                        route=[(station1, line)] + list(reversed(route[1:-1])) + [(station2, line)]
-                    elif idx2 > idx1:
-                        for idx in range(idx1, idx2 + 1):
-                            new_station = line._idxtostation[idx]
-                            route.append((new_station, line))
-                for station in route:
-                    if station not in full_path:
-                        full_path.append(station)
-
-        return full_path
 
     def print_train_location(self, train_id):
         """

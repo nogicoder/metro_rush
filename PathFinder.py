@@ -1,13 +1,15 @@
 from collections import deque, namedtuple
 
 
-class PathFinding:  # """UPDATE"""
+class PathFinding:
 
     def __init__(self, metro, alt=0):
         self.edges = self.make_edges(metro.edges, alt)
         self.start = metro.start
         self.stop = metro.stop
-        self.path = self.find_shortest_path()
+        self.lines = metro.lines
+        self.path, self.cost = self.find_shortest_path()
+        self.converted_path = self.convert_path(self.path)
 
     @property
     def nodes(self):
@@ -39,7 +41,7 @@ class PathFinding:  # """UPDATE"""
             neighbors[edge.start].add((edge.end, edge.weight))
         return neighbors
 
-    def find_shortest_path(self):  # """UPDATE"""
+    def find_shortest_path(self):
         unvisited_nodes = self.nodes.copy()
         costs = {node: float('inf') for node in self.nodes}
         costs[self.start] = 0
@@ -86,3 +88,29 @@ class PathFinding:  # """UPDATE"""
 
         cost = costs[path[-1]]
         return (path, cost)
+
+    def convert_path(self, path):
+        full_path = []
+        for i in range(1, len(path)):
+            station1 = path[i - 1]
+            station2 = path[i]
+            for line in self.lines.values():
+                route = []
+                if station1 in line._stationtoidx and station2 in line._stationtoidx:
+                    idx1 = line._stationtoidx[station1]
+                    idx2 = line._stationtoidx[station2]
+                    if idx1 > idx2:
+                        for idx in range(idx2, idx1 + 1):
+                            new_station = line._idxtostation[idx]
+                            route.append((new_station, line))
+                        route = [(station1, line)] + \
+                            list(reversed(route[1:-1])) + [(station2, line)]
+                    elif idx2 > idx1:
+                        for idx in range(idx1, idx2 + 1):
+                            new_station = line._idxtostation[idx]
+                            route.append((new_station, line))
+                for station in route:
+                    if station not in full_path:
+                        full_path.append(station)
+
+        return full_path
