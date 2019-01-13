@@ -9,4 +9,6 @@ def main():
     path, cost = PathFinding(metro).path
     print((path, cost))
 
-main()
+
+if __name__ == '__main__':
+    main()

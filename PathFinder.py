@@ -1,9 +1,11 @@
 from collections import deque, namedtuple
+from metro import MoveTrain, SwitchLine
 
 
 class PathFinding:  # """UPDATE"""
 
     def __init__(self, metro, alt=0):
+        self.metro = metro
         self.edges = self.make_edges(metro.edges, alt)
         self.start = metro.start
         self.stop = metro.stop
@@ -86,3 +88,58 @@ class PathFinding:  # """UPDATE"""
 
         cost = costs[path[-1]]
         return (path, cost)
+
+    def get_action_list_1(self):
+        """
+        All train move along single path
+        """
+        actionlist = []
+        path = list(self.path[0])
+        # print(path)
+        switch_turn = []
+        start_turn = []
+
+        for train in self.metro.trains.values():
+            # print(train)
+            line = train.line
+            if start_turn:
+                turn = start_turn[-1] + 1
+            else:
+                turn = 0
+
+            while turn in switch_turn:
+                turn += 1
+            start_turn.append(turn)
+
+            for station_1, station_2 in zip(path[:-1], path[1:]):
+                if station_2 not in line:
+                    new_line = list(station_1.lines & station_2.lines)[0]
+                    action = SwitchLine(train, line, new_line)
+                    try:
+                        actionlist[turn].append(action)
+                    except IndexError:
+                        actionlist.append([action])
+                    # print('turn {}: Switch line'.format(turn))
+                    switch_turn.append(turn)
+                    turn += 1
+                    line = new_line
+
+                station_1_id = line.get_station_idx(station_1)
+                station_2_id = line.get_station_idx(station_2)
+                if station_2_id > station_1_id:
+                    step = 1
+                else:
+                    step = -1
+                for idx in range(station_1_id, station_2_id, step):
+                    # print('s turn:', switch_turn)
+                    # print('current turn', turn)
+                    while turn in switch_turn:
+                        turn += 1
+                    # print('turn {}: move'.format(turn))
+                    action = MoveTrain(train, line[idx], line[idx + step])
+                    try:
+                        actionlist[turn].append(action)
+                    except IndexError:
+                        actionlist.append([action])
+                    turn += 1
+        return actionlist
