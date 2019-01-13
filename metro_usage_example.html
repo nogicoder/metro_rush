@@ -11785,6 +11785,7 @@ div#notebook {
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">metro</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">PathFinder</span> <span class="k">import</span> <span class="o">*</span>
 </pre></div>
 
 </div>
@@ -11890,15 +11891,15 @@ Pul Bangash
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Red Line&#39;: &lt;metro.Line at 0x7fc850f7df28&gt;,
- &#39;Violet Line&#39;: &lt;metro.Line at 0x7fc850f831d0&gt;,
- &#39;Green Line&#39;: &lt;metro.Line at 0x7fc850f832e8&gt;,
- &#39;Pink Line&#39;: &lt;metro.Line at 0x7fc850f833c8&gt;,
- &#39;Yellow Line&#39;: &lt;metro.Line at 0x7fc850f835c0&gt;,
- &#39;Airport Express&#39;: &lt;metro.Line at 0x7fc850f83908&gt;,
- &#39;Blue Line&#39;: &lt;metro.Line at 0x7fc850f83940&gt;,
- &#39;Magenta Line&#39;: &lt;metro.Line at 0x7fc850f83c50&gt;,
- &#39;Rapid&#39;: &lt;metro.Line at 0x7fc850f83eb8&gt;}</pre>
+<pre>{&#39;Red Line&#39;: Red Line,
+ &#39;Violet Line&#39;: Violet Line,
+ &#39;Green Line&#39;: Green Line,
+ &#39;Pink Line&#39;: Pink Line,
+ &#39;Yellow Line&#39;: Yellow Line,
+ &#39;Airport Express&#39;: Airport Express,
+ &#39;Blue Line&#39;: Blue Line,
+ &#39;Magenta Line&#39;: Magenta Line,
+ &#39;Rapid&#39;: Rapid}</pre>
 </div>
 
 </div>
@@ -12043,26 +12044,26 @@ Keshav Puram(Red Line:15)-T30
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>{&#39;Kashmere Gate&#39;: &lt;metro.Station at 0x7fc850f8db00&gt;,
- &#39;Inder Lok&#39;: &lt;metro.Station at 0x7fc850f83160&gt;,
- &#39;Netaji Subhash Place&#39;: &lt;metro.Station at 0x7fc85071aa90&gt;,
- &#39;Azadpur&#39;: &lt;metro.Station at 0x7fc85071aa58&gt;,
- &#39;New Delhi&#39;: &lt;metro.Station at 0x7fc850f8da58&gt;,
- &#39;Rajiv Chowk&#39;: &lt;metro.Station at 0x7fc850f8d5f8&gt;,
- &#39;Central Secretariat&#39;: &lt;metro.Station at 0x7fc850f8dcf8&gt;,
- &#39;INA&#39;: &lt;metro.Station at 0x7fc85071ad30&gt;,
- &#39;Hauz Khas&#39;: &lt;metro.Station at 0x7fc85071a470&gt;,
- &#39;Sikandarpur&#39;: &lt;metro.Station at 0x7fc850f83cc0&gt;,
- &#39;Janak Puri West&#39;: &lt;metro.Station at 0x7fc850f83f28&gt;,
- &#39;Rajouri Garden&#39;: &lt;metro.Station at 0x7fc85071ab00&gt;,
- &#39;Kirti Nagar&#39;: &lt;metro.Station at 0x7fc850f8d550&gt;,
- &#39;Mandi House&#39;: &lt;metro.Station at 0x7fc850f8dbe0&gt;,
- &#39;Botanical Garden&#39;: &lt;metro.Station at 0x7fc85071a898&gt;,
- &#39;Dhaula Kuan&#39;: &lt;metro.Station at 0x7fc850f8dac8&gt;,
- &#39;Lajpat Nagar&#39;: &lt;metro.Station at 0x7fc85071ae48&gt;,
- &#39;Kalkaji Mandir&#39;: &lt;metro.Station at 0x7fc85071a780&gt;,
- &#39;Janakpuri West&#39;: &lt;metro.Station at 0x7fc85071a048&gt;,
- &#39;Durgabai Deshmukh South Campus&#39;: &lt;metro.Station at 0x7fc85071abe0&gt;}</pre>
+<pre>{&#39;Kashmere Gate&#39;: Kashmere Gate,
+ &#39;Inder Lok&#39;: Inder Lok,
+ &#39;Netaji Subhash Place&#39;: Netaji Subhash Place,
+ &#39;Azadpur&#39;: Azadpur,
+ &#39;New Delhi&#39;: New Delhi,
+ &#39;Rajiv Chowk&#39;: Rajiv Chowk,
+ &#39;Central Secretariat&#39;: Central Secretariat,
+ &#39;INA&#39;: INA,
+ &#39;Hauz Khas&#39;: Hauz Khas,
+ &#39;Sikandarpur&#39;: Sikandarpur,
+ &#39;Janak Puri West&#39;: Janak Puri West,
+ &#39;Rajouri Garden&#39;: Rajouri Garden,
+ &#39;Kirti Nagar&#39;: Kirti Nagar,
+ &#39;Mandi House&#39;: Mandi House,
+ &#39;Botanical Garden&#39;: Botanical Garden,
+ &#39;Dhaula Kuan&#39;: Dhaula Kuan,
+ &#39;Lajpat Nagar&#39;: Lajpat Nagar,
+ &#39;Kalkaji Mandir&#39;: Kalkaji Mandir,
+ &#39;Janakpuri West&#39;: Janakpuri West,
+ &#39;Durgabai Deshmukh South Campus&#39;: Durgabai Deshmukh South Campus}</pre>
 </div>
 
 </div>
@@ -12330,8 +12331,9 @@ Kashmere Gate(Red Line:8)-T1
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Line that passing current transfer point [Kashmere Gate]
-Red Line
 Violet Line
+Red Line
+Yellow Line
 </pre>
 </div>
 </div>
@@ -12440,6 +12442,4200 @@ Keshav Puram(Red Line:15)-T27
 Keshav Puram(Red Line:15)-T28
 Keshav Puram(Red Line:15)-T29
 Keshav Puram(Red Line:15)-T30
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Path-finding">Path finding<a class="anchor-link" href="#Path-finding">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">metro</span> <span class="o">=</span> <span class="n">Metro</span><span class="p">(</span><span class="s1">&#39;delhi&#39;</span><span class="p">)</span>
+<span class="n">metro</span><span class="o">.</span><span class="n">build_graph</span><span class="p">(</span><span class="s1">&#39;delhi&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;start station&#39;</span><span class="p">,</span><span class="n">metro</span><span class="o">.</span><span class="n">start</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;stop station&#39;</span><span class="p">,</span><span class="n">metro</span><span class="o">.</span><span class="n">stop</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>start station Keshav Puram
+stop station Mayur Vihar-1
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pathfinding</span> <span class="o">=</span> <span class="n">PathFinding</span><span class="p">(</span><span class="n">metro</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pathfinding</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(deque([Keshav Puram, Inder Lok, Kashmere Gate, Mandi House, Mayur Vihar-1]), 17)
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">actionlist</span> <span class="o">=</span> <span class="n">pathfinding</span><span class="o">.</span><span class="n">get_action_list_1</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">metro</span><span class="o">.</span><span class="n">transferpoints</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{&#39;Kashmere Gate&#39;: Kashmere Gate, &#39;Inder Lok&#39;: Inder Lok, &#39;Netaji Subhash Place&#39;: Netaji Subhash Place, &#39;Azadpur&#39;: Azadpur, &#39;New Delhi&#39;: New Delhi, &#39;Rajiv Chowk&#39;: Rajiv Chowk, &#39;Central Secretariat&#39;: Central Secretariat, &#39;INA&#39;: INA, &#39;Hauz Khas&#39;: Hauz Khas, &#39;Sikandarpur&#39;: Sikandarpur, &#39;Janak Puri West&#39;: Janak Puri West, &#39;Rajouri Garden&#39;: Rajouri Garden, &#39;Kirti Nagar&#39;: Kirti Nagar, &#39;Mandi House&#39;: Mandi House, &#39;Botanical Garden&#39;: Botanical Garden, &#39;Dhaula Kuan&#39;: Dhaula Kuan, &#39;Lajpat Nagar&#39;: Lajpat Nagar, &#39;Kalkaji Mandir&#39;: Kalkaji Mandir, &#39;Janakpuri West&#39;: Janakpuri West, &#39;Durgabai Deshmukh South Campus&#39;: Durgabai Deshmukh South Campus}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">metro</span><span class="o">.</span><span class="n">transferpoints</span><span class="p">[</span><span class="s1">&#39;Kashmere Gate&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lines</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>{Violet Line, Red Line, Yellow Line}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">station</span> <span class="ow">in</span> <span class="n">metro</span><span class="o">.</span><span class="n">transferpoints</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{}</span><span class="s1">: </span><span class="si">{}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">station</span><span class="p">,</span> <span class="n">station</span><span class="o">.</span><span class="n">lines</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Kashmere Gate: {Violet Line, Red Line, Yellow Line}
+Inder Lok: {Green Line, Red Line}
+Netaji Subhash Place: {Pink Line, Red Line}
+Azadpur: {Pink Line, Yellow Line}
+New Delhi: {Yellow Line, Airport Express}
+Rajiv Chowk: {Blue Line, Yellow Line}
+Central Secretariat: {Violet Line, Yellow Line}
+INA: {Pink Line, Yellow Line}
+Hauz Khas: {Magenta Line, Yellow Line}
+Sikandarpur: {Rapid, Yellow Line}
+Janak Puri West: {Blue Line, Magenta Line}
+Rajouri Garden: {Pink Line, Blue Line}
+Kirti Nagar: {Green Line, Blue Line}
+Mandi House: {Violet Line, Blue Line}
+Botanical Garden: {Blue Line, Magenta Line}
+Dhaula Kuan: {Pink Line, Airport Express}
+Lajpat Nagar: {Violet Line, Pink Line}
+Kalkaji Mandir: {Violet Line, Magenta Line}
+Janakpuri West: {Blue Line, Magenta Line}
+Durgabai Deshmukh South Campus: {Pink Line, Airport Express}
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Test-action-list">Test action list<a class="anchor-link" href="#Test-action-list">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">turn</span> <span class="ow">in</span> <span class="n">actionlist</span><span class="p">:</span>
+    <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;turn:&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">action</span> <span class="ow">in</span> <span class="n">turn</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>turn: 1
+[move] train 1 from Keshav Puram to Kanhaiya Nagar
+
+turn: 2
+[move] train 1 from Kanhaiya Nagar to Inder Lok
+[move] train 2 from Keshav Puram to Kanhaiya Nagar
+
+turn: 3
+[move] train 1 from Inder Lok to Shastri Nagar
+[move] train 2 from Kanhaiya Nagar to Inder Lok
+[move] train 3 from Keshav Puram to Kanhaiya Nagar
+
+turn: 4
+[move] train 1 from Shastri Nagar to Pratap Nagar
+[move] train 2 from Inder Lok to Shastri Nagar
+[move] train 3 from Kanhaiya Nagar to Inder Lok
+[move] train 4 from Keshav Puram to Kanhaiya Nagar
+
+turn: 5
+[move] train 1 from Pratap Nagar to Pul Bangash
+[move] train 2 from Shastri Nagar to Pratap Nagar
+[move] train 3 from Inder Lok to Shastri Nagar
+[move] train 4 from Kanhaiya Nagar to Inder Lok
+[move] train 5 from Keshav Puram to Kanhaiya Nagar
+
+turn: 6
+[move] train 1 from Pul Bangash to Tis Hazari
+[move] train 2 from Pratap Nagar to Pul Bangash
+[move] train 3 from Shastri Nagar to Pratap Nagar
+[move] train 4 from Inder Lok to Shastri Nagar
+[move] train 5 from Kanhaiya Nagar to Inder Lok
+[move] train 6 from Keshav Puram to Kanhaiya Nagar
+
+turn: 7
+[move] train 1 from Tis Hazari to Kashmere Gate
+[move] train 2 from Pul Bangash to Tis Hazari
+[move] train 3 from Pratap Nagar to Pul Bangash
+[move] train 4 from Shastri Nagar to Pratap Nagar
+[move] train 5 from Inder Lok to Shastri Nagar
+[move] train 6 from Kanhaiya Nagar to Inder Lok
+[move] train 7 from Keshav Puram to Kanhaiya Nagar
+
+turn: 8
+[Switch line] train 1 from Red Line to Violet Line
+
+turn: 9
+[move] train 1 from Kashmere Gate to Lal Quila
+[move] train 2 from Tis Hazari to Kashmere Gate
+[move] train 3 from Pul Bangash to Tis Hazari
+[move] train 4 from Pratap Nagar to Pul Bangash
+[move] train 5 from Shastri Nagar to Pratap Nagar
+[move] train 6 from Inder Lok to Shastri Nagar
+[move] train 7 from Kanhaiya Nagar to Inder Lok
+[move] train 8 from Keshav Puram to Kanhaiya Nagar
+
+turn: 10
+[move] train 1 from Lal Quila to Jama Masjid
+[Switch line] train 2 from Red Line to Violet Line
+
+turn: 11
+[move] train 1 from Jama Masjid to Delhi Gate
+[move] train 2 from Kashmere Gate to Lal Quila
+[move] train 3 from Tis Hazari to Kashmere Gate
+[move] train 4 from Pul Bangash to Tis Hazari
+[move] train 5 from Pratap Nagar to Pul Bangash
+[move] train 6 from Shastri Nagar to Pratap Nagar
+[move] train 7 from Inder Lok to Shastri Nagar
+[move] train 8 from Kanhaiya Nagar to Inder Lok
+[move] train 9 from Keshav Puram to Kanhaiya Nagar
+
+turn: 12
+[move] train 1 from Delhi Gate to ITO
+[move] train 2 from Lal Quila to Jama Masjid
+[Switch line] train 3 from Red Line to Violet Line
+
+turn: 13
+[move] train 1 from ITO to Mandi House
+[move] train 2 from Jama Masjid to Delhi Gate
+[move] train 3 from Kashmere Gate to Lal Quila
+[move] train 4 from Tis Hazari to Kashmere Gate
+[move] train 5 from Pul Bangash to Tis Hazari
+[move] train 6 from Pratap Nagar to Pul Bangash
+[move] train 7 from Shastri Nagar to Pratap Nagar
+[move] train 8 from Inder Lok to Shastri Nagar
+[move] train 9 from Kanhaiya Nagar to Inder Lok
+[move] train 10 from Keshav Puram to Kanhaiya Nagar
+
+turn: 14
+[Switch line] train 1 from Violet Line to Blue Line
+[Switch line] train 4 from Red Line to Violet Line
+
+turn: 15
+[move] train 1 from Mandi House to Pragati Maidan
+[move] train 2 from Delhi Gate to ITO
+[move] train 3 from Lal Quila to Jama Masjid
+[move] train 4 from Kashmere Gate to Lal Quila
+[move] train 5 from Tis Hazari to Kashmere Gate
+[move] train 6 from Pul Bangash to Tis Hazari
+[move] train 7 from Pratap Nagar to Pul Bangash
+[move] train 8 from Shastri Nagar to Pratap Nagar
+[move] train 9 from Inder Lok to Shastri Nagar
+[move] train 10 from Kanhaiya Nagar to Inder Lok
+[move] train 11 from Keshav Puram to Kanhaiya Nagar
+
+turn: 16
+[move] train 1 from Pragati Maidan to Indraprastha
+[move] train 2 from ITO to Mandi House
+[move] train 3 from Jama Masjid to Delhi Gate
+[move] train 4 from Lal Quila to Jama Masjid
+[Switch line] train 5 from Red Line to Violet Line
+
+turn: 17
+[move] train 1 from Indraprastha to Yamuna Bank
+[Switch line] train 2 from Violet Line to Blue Line
+
+turn: 18
+[move] train 1 from Yamuna Bank to Akshardham
+[move] train 2 from Mandi House to Pragati Maidan
+[move] train 3 from Delhi Gate to ITO
+[move] train 4 from Jama Masjid to Delhi Gate
+[move] train 5 from Kashmere Gate to Lal Quila
+[move] train 6 from Tis Hazari to Kashmere Gate
+[move] train 7 from Pul Bangash to Tis Hazari
+[move] train 8 from Pratap Nagar to Pul Bangash
+[move] train 9 from Shastri Nagar to Pratap Nagar
+[move] train 10 from Inder Lok to Shastri Nagar
+[move] train 11 from Kanhaiya Nagar to Inder Lok
+[move] train 12 from Keshav Puram to Kanhaiya Nagar
+
+turn: 19
+[move] train 1 from Akshardham to Mayur Vihar-1
+[move] train 2 from Pragati Maidan to Indraprastha
+[move] train 3 from ITO to Mandi House
+[move] train 4 from Delhi Gate to ITO
+[move] train 5 from Lal Quila to Jama Masjid
+[Switch line] train 6 from Red Line to Violet Line
+
+turn: 20
+[move] train 2 from Indraprastha to Yamuna Bank
+[Switch line] train 3 from Violet Line to Blue Line
+
+turn: 21
+[move] train 2 from Yamuna Bank to Akshardham
+[move] train 3 from Mandi House to Pragati Maidan
+[move] train 4 from ITO to Mandi House
+[move] train 5 from Jama Masjid to Delhi Gate
+[move] train 6 from Kashmere Gate to Lal Quila
+[move] train 7 from Tis Hazari to Kashmere Gate
+[move] train 8 from Pul Bangash to Tis Hazari
+[move] train 9 from Pratap Nagar to Pul Bangash
+[move] train 10 from Shastri Nagar to Pratap Nagar
+[move] train 11 from Inder Lok to Shastri Nagar
+[move] train 12 from Kanhaiya Nagar to Inder Lok
+[move] train 13 from Keshav Puram to Kanhaiya Nagar
+
+turn: 22
+[move] train 2 from Akshardham to Mayur Vihar-1
+[move] train 3 from Pragati Maidan to Indraprastha
+[Switch line] train 4 from Violet Line to Blue Line
+[Switch line] train 7 from Red Line to Violet Line
+
+turn: 23
+[move] train 3 from Indraprastha to Yamuna Bank
+[move] train 4 from Mandi House to Pragati Maidan
+[move] train 5 from Delhi Gate to ITO
+[move] train 6 from Lal Quila to Jama Masjid
+[move] train 7 from Kashmere Gate to Lal Quila
+[move] train 8 from Tis Hazari to Kashmere Gate
+[move] train 9 from Pul Bangash to Tis Hazari
+[move] train 10 from Pratap Nagar to Pul Bangash
+[move] train 11 from Shastri Nagar to Pratap Nagar
+[move] train 12 from Inder Lok to Shastri Nagar
+[move] train 13 from Kanhaiya Nagar to Inder Lok
+[move] train 14 from Keshav Puram to Kanhaiya Nagar
+
+turn: 24
+[move] train 3 from Yamuna Bank to Akshardham
+[move] train 4 from Pragati Maidan to Indraprastha
+[move] train 5 from ITO to Mandi House
+[move] train 6 from Jama Masjid to Delhi Gate
+[move] train 7 from Lal Quila to Jama Masjid
+[Switch line] train 8 from Red Line to Violet Line
+
+turn: 25
+[move] train 3 from Akshardham to Mayur Vihar-1
+[move] train 4 from Indraprastha to Yamuna Bank
+[Switch line] train 5 from Violet Line to Blue Line
+
+turn: 26
+[move] train 4 from Yamuna Bank to Akshardham
+[move] train 5 from Mandi House to Pragati Maidan
+[move] train 6 from Delhi Gate to ITO
+[move] train 7 from Jama Masjid to Delhi Gate
+[move] train 8 from Kashmere Gate to Lal Quila
+[move] train 9 from Tis Hazari to Kashmere Gate
+[move] train 10 from Pul Bangash to Tis Hazari
+[move] train 11 from Pratap Nagar to Pul Bangash
+[move] train 12 from Shastri Nagar to Pratap Nagar
+[move] train 13 from Inder Lok to Shastri Nagar
+[move] train 14 from Kanhaiya Nagar to Inder Lok
+[move] train 15 from Keshav Puram to Kanhaiya Nagar
+
+turn: 27
+[move] train 4 from Akshardham to Mayur Vihar-1
+[move] train 5 from Pragati Maidan to Indraprastha
+[move] train 6 from ITO to Mandi House
+[move] train 7 from Delhi Gate to ITO
+[move] train 8 from Lal Quila to Jama Masjid
+[Switch line] train 9 from Red Line to Violet Line
+
+turn: 28
+[move] train 5 from Indraprastha to Yamuna Bank
+[Switch line] train 6 from Violet Line to Blue Line
+
+turn: 29
+[move] train 5 from Yamuna Bank to Akshardham
+[move] train 6 from Mandi House to Pragati Maidan
+[move] train 7 from ITO to Mandi House
+[move] train 8 from Jama Masjid to Delhi Gate
+[move] train 9 from Kashmere Gate to Lal Quila
+[move] train 10 from Tis Hazari to Kashmere Gate
+[move] train 11 from Pul Bangash to Tis Hazari
+[move] train 12 from Pratap Nagar to Pul Bangash
+[move] train 13 from Shastri Nagar to Pratap Nagar
+[move] train 14 from Inder Lok to Shastri Nagar
+[move] train 15 from Kanhaiya Nagar to Inder Lok
+[move] train 16 from Keshav Puram to Kanhaiya Nagar
+
+turn: 30
+[move] train 5 from Akshardham to Mayur Vihar-1
+[move] train 6 from Pragati Maidan to Indraprastha
+[Switch line] train 7 from Violet Line to Blue Line
+[Switch line] train 10 from Red Line to Violet Line
+
+turn: 31
+[move] train 6 from Indraprastha to Yamuna Bank
+[move] train 7 from Mandi House to Pragati Maidan
+[move] train 8 from Delhi Gate to ITO
+[move] train 9 from Lal Quila to Jama Masjid
+[move] train 10 from Kashmere Gate to Lal Quila
+[move] train 11 from Tis Hazari to Kashmere Gate
+[move] train 12 from Pul Bangash to Tis Hazari
+[move] train 13 from Pratap Nagar to Pul Bangash
+[move] train 14 from Shastri Nagar to Pratap Nagar
+[move] train 15 from Inder Lok to Shastri Nagar
+[move] train 16 from Kanhaiya Nagar to Inder Lok
+[move] train 17 from Keshav Puram to Kanhaiya Nagar
+
+turn: 32
+[move] train 6 from Yamuna Bank to Akshardham
+[move] train 7 from Pragati Maidan to Indraprastha
+[move] train 8 from ITO to Mandi House
+[move] train 9 from Jama Masjid to Delhi Gate
+[move] train 10 from Lal Quila to Jama Masjid
+[Switch line] train 11 from Red Line to Violet Line
+
+turn: 33
+[move] train 6 from Akshardham to Mayur Vihar-1
+[move] train 7 from Indraprastha to Yamuna Bank
+[Switch line] train 8 from Violet Line to Blue Line
+
+turn: 34
+[move] train 7 from Yamuna Bank to Akshardham
+[move] train 8 from Mandi House to Pragati Maidan
+[move] train 9 from Delhi Gate to ITO
+[move] train 10 from Jama Masjid to Delhi Gate
+[move] train 11 from Kashmere Gate to Lal Quila
+[move] train 12 from Tis Hazari to Kashmere Gate
+[move] train 13 from Pul Bangash to Tis Hazari
+[move] train 14 from Pratap Nagar to Pul Bangash
+[move] train 15 from Shastri Nagar to Pratap Nagar
+[move] train 16 from Inder Lok to Shastri Nagar
+[move] train 17 from Kanhaiya Nagar to Inder Lok
+[move] train 18 from Keshav Puram to Kanhaiya Nagar
+
+turn: 35
+[move] train 7 from Akshardham to Mayur Vihar-1
+[move] train 8 from Pragati Maidan to Indraprastha
+[move] train 9 from ITO to Mandi House
+[move] train 10 from Delhi Gate to ITO
+[move] train 11 from Lal Quila to Jama Masjid
+[Switch line] train 12 from Red Line to Violet Line
+
+turn: 36
+[move] train 8 from Indraprastha to Yamuna Bank
+[Switch line] train 9 from Violet Line to Blue Line
+
+turn: 37
+[move] train 8 from Yamuna Bank to Akshardham
+[move] train 9 from Mandi House to Pragati Maidan
+[move] train 10 from ITO to Mandi House
+[move] train 11 from Jama Masjid to Delhi Gate
+[move] train 12 from Kashmere Gate to Lal Quila
+[move] train 13 from Tis Hazari to Kashmere Gate
+[move] train 14 from Pul Bangash to Tis Hazari
+[move] train 15 from Pratap Nagar to Pul Bangash
+[move] train 16 from Shastri Nagar to Pratap Nagar
+[move] train 17 from Inder Lok to Shastri Nagar
+[move] train 18 from Kanhaiya Nagar to Inder Lok
+[move] train 19 from Keshav Puram to Kanhaiya Nagar
+
+turn: 38
+[move] train 8 from Akshardham to Mayur Vihar-1
+[move] train 9 from Pragati Maidan to Indraprastha
+[Switch line] train 10 from Violet Line to Blue Line
+[Switch line] train 13 from Red Line to Violet Line
+
+turn: 39
+[move] train 9 from Indraprastha to Yamuna Bank
+[move] train 10 from Mandi House to Pragati Maidan
+[move] train 11 from Delhi Gate to ITO
+[move] train 12 from Lal Quila to Jama Masjid
+[move] train 13 from Kashmere Gate to Lal Quila
+[move] train 14 from Tis Hazari to Kashmere Gate
+[move] train 15 from Pul Bangash to Tis Hazari
+[move] train 16 from Pratap Nagar to Pul Bangash
+[move] train 17 from Shastri Nagar to Pratap Nagar
+[move] train 18 from Inder Lok to Shastri Nagar
+[move] train 19 from Kanhaiya Nagar to Inder Lok
+[move] train 20 from Keshav Puram to Kanhaiya Nagar
+
+turn: 40
+[move] train 9 from Yamuna Bank to Akshardham
+[move] train 10 from Pragati Maidan to Indraprastha
+[move] train 11 from ITO to Mandi House
+[move] train 12 from Jama Masjid to Delhi Gate
+[move] train 13 from Lal Quila to Jama Masjid
+[Switch line] train 14 from Red Line to Violet Line
+
+turn: 41
+[move] train 9 from Akshardham to Mayur Vihar-1
+[move] train 10 from Indraprastha to Yamuna Bank
+[Switch line] train 11 from Violet Line to Blue Line
+
+turn: 42
+[move] train 10 from Yamuna Bank to Akshardham
+[move] train 11 from Mandi House to Pragati Maidan
+[move] train 12 from Delhi Gate to ITO
+[move] train 13 from Jama Masjid to Delhi Gate
+[move] train 14 from Kashmere Gate to Lal Quila
+[move] train 15 from Tis Hazari to Kashmere Gate
+[move] train 16 from Pul Bangash to Tis Hazari
+[move] train 17 from Pratap Nagar to Pul Bangash
+[move] train 18 from Shastri Nagar to Pratap Nagar
+[move] train 19 from Inder Lok to Shastri Nagar
+[move] train 20 from Kanhaiya Nagar to Inder Lok
+[move] train 21 from Keshav Puram to Kanhaiya Nagar
+
+turn: 43
+[move] train 10 from Akshardham to Mayur Vihar-1
+[move] train 11 from Pragati Maidan to Indraprastha
+[move] train 12 from ITO to Mandi House
+[move] train 13 from Delhi Gate to ITO
+[move] train 14 from Lal Quila to Jama Masjid
+[Switch line] train 15 from Red Line to Violet Line
+
+turn: 44
+[move] train 11 from Indraprastha to Yamuna Bank
+[Switch line] train 12 from Violet Line to Blue Line
+
+turn: 45
+[move] train 11 from Yamuna Bank to Akshardham
+[move] train 12 from Mandi House to Pragati Maidan
+[move] train 13 from ITO to Mandi House
+[move] train 14 from Jama Masjid to Delhi Gate
+[move] train 15 from Kashmere Gate to Lal Quila
+[move] train 16 from Tis Hazari to Kashmere Gate
+[move] train 17 from Pul Bangash to Tis Hazari
+[move] train 18 from Pratap Nagar to Pul Bangash
+[move] train 19 from Shastri Nagar to Pratap Nagar
+[move] train 20 from Inder Lok to Shastri Nagar
+[move] train 21 from Kanhaiya Nagar to Inder Lok
+[move] train 22 from Keshav Puram to Kanhaiya Nagar
+
+turn: 46
+[move] train 11 from Akshardham to Mayur Vihar-1
+[move] train 12 from Pragati Maidan to Indraprastha
+[Switch line] train 13 from Violet Line to Blue Line
+[Switch line] train 16 from Red Line to Violet Line
+
+turn: 47
+[move] train 12 from Indraprastha to Yamuna Bank
+[move] train 13 from Mandi House to Pragati Maidan
+[move] train 14 from Delhi Gate to ITO
+[move] train 15 from Lal Quila to Jama Masjid
+[move] train 16 from Kashmere Gate to Lal Quila
+[move] train 17 from Tis Hazari to Kashmere Gate
+[move] train 18 from Pul Bangash to Tis Hazari
+[move] train 19 from Pratap Nagar to Pul Bangash
+[move] train 20 from Shastri Nagar to Pratap Nagar
+[move] train 21 from Inder Lok to Shastri Nagar
+[move] train 22 from Kanhaiya Nagar to Inder Lok
+[move] train 23 from Keshav Puram to Kanhaiya Nagar
+
+turn: 48
+[move] train 12 from Yamuna Bank to Akshardham
+[move] train 13 from Pragati Maidan to Indraprastha
+[move] train 14 from ITO to Mandi House
+[move] train 15 from Jama Masjid to Delhi Gate
+[move] train 16 from Lal Quila to Jama Masjid
+[Switch line] train 17 from Red Line to Violet Line
+
+turn: 49
+[move] train 12 from Akshardham to Mayur Vihar-1
+[move] train 13 from Indraprastha to Yamuna Bank
+[Switch line] train 14 from Violet Line to Blue Line
+
+turn: 50
+[move] train 13 from Yamuna Bank to Akshardham
+[move] train 14 from Mandi House to Pragati Maidan
+[move] train 15 from Delhi Gate to ITO
+[move] train 16 from Jama Masjid to Delhi Gate
+[move] train 17 from Kashmere Gate to Lal Quila
+[move] train 18 from Tis Hazari to Kashmere Gate
+[move] train 19 from Pul Bangash to Tis Hazari
+[move] train 20 from Pratap Nagar to Pul Bangash
+[move] train 21 from Shastri Nagar to Pratap Nagar
+[move] train 22 from Inder Lok to Shastri Nagar
+[move] train 23 from Kanhaiya Nagar to Inder Lok
+[move] train 24 from Keshav Puram to Kanhaiya Nagar
+
+turn: 51
+[move] train 13 from Akshardham to Mayur Vihar-1
+[move] train 14 from Pragati Maidan to Indraprastha
+[move] train 15 from ITO to Mandi House
+[move] train 16 from Delhi Gate to ITO
+[move] train 17 from Lal Quila to Jama Masjid
+[Switch line] train 18 from Red Line to Violet Line
+
+turn: 52
+[move] train 14 from Indraprastha to Yamuna Bank
+[Switch line] train 15 from Violet Line to Blue Line
+
+turn: 53
+[move] train 14 from Yamuna Bank to Akshardham
+[move] train 15 from Mandi House to Pragati Maidan
+[move] train 16 from ITO to Mandi House
+[move] train 17 from Jama Masjid to Delhi Gate
+[move] train 18 from Kashmere Gate to Lal Quila
+[move] train 19 from Tis Hazari to Kashmere Gate
+[move] train 20 from Pul Bangash to Tis Hazari
+[move] train 21 from Pratap Nagar to Pul Bangash
+[move] train 22 from Shastri Nagar to Pratap Nagar
+[move] train 23 from Inder Lok to Shastri Nagar
+[move] train 24 from Kanhaiya Nagar to Inder Lok
+[move] train 25 from Keshav Puram to Kanhaiya Nagar
+
+turn: 54
+[move] train 14 from Akshardham to Mayur Vihar-1
+[move] train 15 from Pragati Maidan to Indraprastha
+[Switch line] train 16 from Violet Line to Blue Line
+[Switch line] train 19 from Red Line to Violet Line
+
+turn: 55
+[move] train 15 from Indraprastha to Yamuna Bank
+[move] train 16 from Mandi House to Pragati Maidan
+[move] train 17 from Delhi Gate to ITO
+[move] train 18 from Lal Quila to Jama Masjid
+[move] train 19 from Kashmere Gate to Lal Quila
+[move] train 20 from Tis Hazari to Kashmere Gate
+[move] train 21 from Pul Bangash to Tis Hazari
+[move] train 22 from Pratap Nagar to Pul Bangash
+[move] train 23 from Shastri Nagar to Pratap Nagar
+[move] train 24 from Inder Lok to Shastri Nagar
+[move] train 25 from Kanhaiya Nagar to Inder Lok
+[move] train 26 from Keshav Puram to Kanhaiya Nagar
+
+turn: 56
+[move] train 15 from Yamuna Bank to Akshardham
+[move] train 16 from Pragati Maidan to Indraprastha
+[move] train 17 from ITO to Mandi House
+[move] train 18 from Jama Masjid to Delhi Gate
+[move] train 19 from Lal Quila to Jama Masjid
+[Switch line] train 20 from Red Line to Violet Line
+
+turn: 57
+[move] train 15 from Akshardham to Mayur Vihar-1
+[move] train 16 from Indraprastha to Yamuna Bank
+[Switch line] train 17 from Violet Line to Blue Line
+
+turn: 58
+[move] train 16 from Yamuna Bank to Akshardham
+[move] train 17 from Mandi House to Pragati Maidan
+[move] train 18 from Delhi Gate to ITO
+[move] train 19 from Jama Masjid to Delhi Gate
+[move] train 20 from Kashmere Gate to Lal Quila
+[move] train 21 from Tis Hazari to Kashmere Gate
+[move] train 22 from Pul Bangash to Tis Hazari
+[move] train 23 from Pratap Nagar to Pul Bangash
+[move] train 24 from Shastri Nagar to Pratap Nagar
+[move] train 25 from Inder Lok to Shastri Nagar
+[move] train 26 from Kanhaiya Nagar to Inder Lok
+[move] train 27 from Keshav Puram to Kanhaiya Nagar
+
+turn: 59
+[move] train 16 from Akshardham to Mayur Vihar-1
+[move] train 17 from Pragati Maidan to Indraprastha
+[move] train 18 from ITO to Mandi House
+[move] train 19 from Delhi Gate to ITO
+[move] train 20 from Lal Quila to Jama Masjid
+[Switch line] train 21 from Red Line to Violet Line
+
+turn: 60
+[move] train 17 from Indraprastha to Yamuna Bank
+[Switch line] train 18 from Violet Line to Blue Line
+
+turn: 61
+[move] train 17 from Yamuna Bank to Akshardham
+[move] train 18 from Mandi House to Pragati Maidan
+[move] train 19 from ITO to Mandi House
+[move] train 20 from Jama Masjid to Delhi Gate
+[move] train 21 from Kashmere Gate to Lal Quila
+[move] train 22 from Tis Hazari to Kashmere Gate
+[move] train 23 from Pul Bangash to Tis Hazari
+[move] train 24 from Pratap Nagar to Pul Bangash
+[move] train 25 from Shastri Nagar to Pratap Nagar
+[move] train 26 from Inder Lok to Shastri Nagar
+[move] train 27 from Kanhaiya Nagar to Inder Lok
+[move] train 28 from Keshav Puram to Kanhaiya Nagar
+
+turn: 62
+[move] train 17 from Akshardham to Mayur Vihar-1
+[move] train 18 from Pragati Maidan to Indraprastha
+[Switch line] train 19 from Violet Line to Blue Line
+[Switch line] train 22 from Red Line to Violet Line
+
+turn: 63
+[move] train 18 from Indraprastha to Yamuna Bank
+[move] train 19 from Mandi House to Pragati Maidan
+[move] train 20 from Delhi Gate to ITO
+[move] train 21 from Lal Quila to Jama Masjid
+[move] train 22 from Kashmere Gate to Lal Quila
+[move] train 23 from Tis Hazari to Kashmere Gate
+[move] train 24 from Pul Bangash to Tis Hazari
+[move] train 25 from Pratap Nagar to Pul Bangash
+[move] train 26 from Shastri Nagar to Pratap Nagar
+[move] train 27 from Inder Lok to Shastri Nagar
+[move] train 28 from Kanhaiya Nagar to Inder Lok
+[move] train 29 from Keshav Puram to Kanhaiya Nagar
+
+turn: 64
+[move] train 18 from Yamuna Bank to Akshardham
+[move] train 19 from Pragati Maidan to Indraprastha
+[move] train 20 from ITO to Mandi House
+[move] train 21 from Jama Masjid to Delhi Gate
+[move] train 22 from Lal Quila to Jama Masjid
+[Switch line] train 23 from Red Line to Violet Line
+
+turn: 65
+[move] train 18 from Akshardham to Mayur Vihar-1
+[move] train 19 from Indraprastha to Yamuna Bank
+[Switch line] train 20 from Violet Line to Blue Line
+
+turn: 66
+[move] train 19 from Yamuna Bank to Akshardham
+[move] train 20 from Mandi House to Pragati Maidan
+[move] train 21 from Delhi Gate to ITO
+[move] train 22 from Jama Masjid to Delhi Gate
+[move] train 23 from Kashmere Gate to Lal Quila
+[move] train 24 from Tis Hazari to Kashmere Gate
+[move] train 25 from Pul Bangash to Tis Hazari
+[move] train 26 from Pratap Nagar to Pul Bangash
+[move] train 27 from Shastri Nagar to Pratap Nagar
+[move] train 28 from Inder Lok to Shastri Nagar
+[move] train 29 from Kanhaiya Nagar to Inder Lok
+[move] train 30 from Keshav Puram to Kanhaiya Nagar
+
+turn: 67
+[move] train 19 from Akshardham to Mayur Vihar-1
+[move] train 20 from Pragati Maidan to Indraprastha
+[move] train 21 from ITO to Mandi House
+[move] train 22 from Delhi Gate to ITO
+[move] train 23 from Lal Quila to Jama Masjid
+[Switch line] train 24 from Red Line to Violet Line
+
+turn: 68
+[move] train 20 from Indraprastha to Yamuna Bank
+[Switch line] train 21 from Violet Line to Blue Line
+
+turn: 69
+[move] train 20 from Yamuna Bank to Akshardham
+[move] train 21 from Mandi House to Pragati Maidan
+[move] train 22 from ITO to Mandi House
+[move] train 23 from Jama Masjid to Delhi Gate
+[move] train 24 from Kashmere Gate to Lal Quila
+[move] train 25 from Tis Hazari to Kashmere Gate
+[move] train 26 from Pul Bangash to Tis Hazari
+[move] train 27 from Pratap Nagar to Pul Bangash
+[move] train 28 from Shastri Nagar to Pratap Nagar
+[move] train 29 from Inder Lok to Shastri Nagar
+[move] train 30 from Kanhaiya Nagar to Inder Lok
+
+turn: 70
+[move] train 20 from Akshardham to Mayur Vihar-1
+[move] train 21 from Pragati Maidan to Indraprastha
+[Switch line] train 22 from Violet Line to Blue Line
+[Switch line] train 25 from Red Line to Violet Line
+
+turn: 71
+[move] train 21 from Indraprastha to Yamuna Bank
+[move] train 22 from Mandi House to Pragati Maidan
+[move] train 23 from Delhi Gate to ITO
+[move] train 24 from Lal Quila to Jama Masjid
+[move] train 25 from Kashmere Gate to Lal Quila
+[move] train 26 from Tis Hazari to Kashmere Gate
+[move] train 27 from Pul Bangash to Tis Hazari
+[move] train 28 from Pratap Nagar to Pul Bangash
+[move] train 29 from Shastri Nagar to Pratap Nagar
+[move] train 30 from Inder Lok to Shastri Nagar
+
+turn: 72
+[move] train 21 from Yamuna Bank to Akshardham
+[move] train 22 from Pragati Maidan to Indraprastha
+[move] train 23 from ITO to Mandi House
+[move] train 24 from Jama Masjid to Delhi Gate
+[move] train 25 from Lal Quila to Jama Masjid
+[Switch line] train 26 from Red Line to Violet Line
+
+turn: 73
+[move] train 21 from Akshardham to Mayur Vihar-1
+[move] train 22 from Indraprastha to Yamuna Bank
+[Switch line] train 23 from Violet Line to Blue Line
+
+turn: 74
+[move] train 22 from Yamuna Bank to Akshardham
+[move] train 23 from Mandi House to Pragati Maidan
+[move] train 24 from Delhi Gate to ITO
+[move] train 25 from Jama Masjid to Delhi Gate
+[move] train 26 from Kashmere Gate to Lal Quila
+[move] train 27 from Tis Hazari to Kashmere Gate
+[move] train 28 from Pul Bangash to Tis Hazari
+[move] train 29 from Pratap Nagar to Pul Bangash
+[move] train 30 from Shastri Nagar to Pratap Nagar
+
+turn: 75
+[move] train 22 from Akshardham to Mayur Vihar-1
+[move] train 23 from Pragati Maidan to Indraprastha
+[move] train 24 from ITO to Mandi House
+[move] train 25 from Delhi Gate to ITO
+[move] train 26 from Lal Quila to Jama Masjid
+[Switch line] train 27 from Red Line to Violet Line
+
+turn: 76
+[move] train 23 from Indraprastha to Yamuna Bank
+[Switch line] train 24 from Violet Line to Blue Line
+
+turn: 77
+[move] train 23 from Yamuna Bank to Akshardham
+[move] train 24 from Mandi House to Pragati Maidan
+[move] train 25 from ITO to Mandi House
+[move] train 26 from Jama Masjid to Delhi Gate
+[move] train 27 from Kashmere Gate to Lal Quila
+[move] train 28 from Tis Hazari to Kashmere Gate
+[move] train 29 from Pul Bangash to Tis Hazari
+[move] train 30 from Pratap Nagar to Pul Bangash
+
+turn: 78
+[move] train 23 from Akshardham to Mayur Vihar-1
+[move] train 24 from Pragati Maidan to Indraprastha
+[Switch line] train 25 from Violet Line to Blue Line
+[Switch line] train 28 from Red Line to Violet Line
+
+turn: 79
+[move] train 24 from Indraprastha to Yamuna Bank
+[move] train 25 from Mandi House to Pragati Maidan
+[move] train 26 from Delhi Gate to ITO
+[move] train 27 from Lal Quila to Jama Masjid
+[move] train 28 from Kashmere Gate to Lal Quila
+[move] train 29 from Tis Hazari to Kashmere Gate
+[move] train 30 from Pul Bangash to Tis Hazari
+
+turn: 80
+[move] train 24 from Yamuna Bank to Akshardham
+[move] train 25 from Pragati Maidan to Indraprastha
+[move] train 26 from ITO to Mandi House
+[move] train 27 from Jama Masjid to Delhi Gate
+[move] train 28 from Lal Quila to Jama Masjid
+[Switch line] train 29 from Red Line to Violet Line
+
+turn: 81
+[move] train 24 from Akshardham to Mayur Vihar-1
+[move] train 25 from Indraprastha to Yamuna Bank
+[Switch line] train 26 from Violet Line to Blue Line
+
+turn: 82
+[move] train 25 from Yamuna Bank to Akshardham
+[move] train 26 from Mandi House to Pragati Maidan
+[move] train 27 from Delhi Gate to ITO
+[move] train 28 from Jama Masjid to Delhi Gate
+[move] train 29 from Kashmere Gate to Lal Quila
+[move] train 30 from Tis Hazari to Kashmere Gate
+
+turn: 83
+[move] train 25 from Akshardham to Mayur Vihar-1
+[move] train 26 from Pragati Maidan to Indraprastha
+[move] train 27 from ITO to Mandi House
+[move] train 28 from Delhi Gate to ITO
+[move] train 29 from Lal Quila to Jama Masjid
+[Switch line] train 30 from Red Line to Violet Line
+
+turn: 84
+[move] train 26 from Indraprastha to Yamuna Bank
+[Switch line] train 27 from Violet Line to Blue Line
+
+turn: 85
+[move] train 26 from Yamuna Bank to Akshardham
+[move] train 27 from Mandi House to Pragati Maidan
+[move] train 28 from ITO to Mandi House
+[move] train 29 from Jama Masjid to Delhi Gate
+[move] train 30 from Kashmere Gate to Lal Quila
+
+turn: 86
+[move] train 26 from Akshardham to Mayur Vihar-1
+[move] train 27 from Pragati Maidan to Indraprastha
+[Switch line] train 28 from Violet Line to Blue Line
+
+turn: 87
+[move] train 27 from Indraprastha to Yamuna Bank
+[move] train 28 from Mandi House to Pragati Maidan
+[move] train 29 from Delhi Gate to ITO
+[move] train 30 from Lal Quila to Jama Masjid
+
+turn: 88
+[move] train 27 from Yamuna Bank to Akshardham
+[move] train 28 from Pragati Maidan to Indraprastha
+[move] train 29 from ITO to Mandi House
+[move] train 30 from Jama Masjid to Delhi Gate
+
+turn: 89
+[move] train 27 from Akshardham to Mayur Vihar-1
+[move] train 28 from Indraprastha to Yamuna Bank
+[Switch line] train 29 from Violet Line to Blue Line
+
+turn: 90
+[move] train 28 from Yamuna Bank to Akshardham
+[move] train 29 from Mandi House to Pragati Maidan
+[move] train 30 from Delhi Gate to ITO
+
+turn: 91
+[move] train 28 from Akshardham to Mayur Vihar-1
+[move] train 29 from Pragati Maidan to Indraprastha
+[move] train 30 from ITO to Mandi House
+
+turn: 92
+[move] train 29 from Indraprastha to Yamuna Bank
+[Switch line] train 30 from Violet Line to Blue Line
+
+turn: 93
+[move] train 29 from Yamuna Bank to Akshardham
+[move] train 30 from Mandi House to Pragati Maidan
+
+turn: 94
+[move] train 29 from Akshardham to Mayur Vihar-1
+[move] train 30 from Pragati Maidan to Indraprastha
+
+turn: 95
+[move] train 30 from Indraprastha to Yamuna Bank
+
+turn: 96
+[move] train 30 from Yamuna Bank to Akshardham
+
+turn: 97
+[move] train 30 from Akshardham to Mayur Vihar-1
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Apply-action-list">Apply action list<a class="anchor-link" href="#Apply-action-list">&#182;</a></h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># inital state</span>
+<span class="n">metro</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">turn</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;turn:&#39;</span><span class="p">,</span> <span class="n">metro</span><span class="o">.</span><span class="n">turns</span><span class="p">)</span>
+<span class="n">metro</span><span class="o">.</span><span class="n">print_train_location</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1"># run all actions</span>
+<span class="k">for</span> <span class="n">action_in_a_turn</span> <span class="ow">in</span> <span class="n">actionlist</span><span class="p">:</span>
+    <span class="n">metro</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">action_in_a_turn</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;turn:&#39;</span><span class="p">,</span> <span class="n">metro</span><span class="o">.</span><span class="n">turns</span><span class="p">)</span>
+    <span class="n">metro</span><span class="o">.</span><span class="n">print_train_location</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>turn: 1
+Keshav Puram(Red Line:15)-T1
+Keshav Puram(Red Line:15)-T2
+Keshav Puram(Red Line:15)-T3
+Keshav Puram(Red Line:15)-T4
+Keshav Puram(Red Line:15)-T5
+Keshav Puram(Red Line:15)-T6
+Keshav Puram(Red Line:15)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 2
+Kanhaiya Nagar(Red Line:14)-T1
+Keshav Puram(Red Line:15)-T2
+Keshav Puram(Red Line:15)-T3
+Keshav Puram(Red Line:15)-T4
+Keshav Puram(Red Line:15)-T5
+Keshav Puram(Red Line:15)-T6
+Keshav Puram(Red Line:15)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 3
+Inder Lok(Red Line:13)-T1
+Kanhaiya Nagar(Red Line:14)-T2
+Keshav Puram(Red Line:15)-T3
+Keshav Puram(Red Line:15)-T4
+Keshav Puram(Red Line:15)-T5
+Keshav Puram(Red Line:15)-T6
+Keshav Puram(Red Line:15)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 4
+Shastri Nagar(Red Line:12)-T1
+Inder Lok(Red Line:13)-T2
+Kanhaiya Nagar(Red Line:14)-T3
+Keshav Puram(Red Line:15)-T4
+Keshav Puram(Red Line:15)-T5
+Keshav Puram(Red Line:15)-T6
+Keshav Puram(Red Line:15)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 5
+Pratap Nagar(Red Line:11)-T1
+Shastri Nagar(Red Line:12)-T2
+Inder Lok(Red Line:13)-T3
+Kanhaiya Nagar(Red Line:14)-T4
+Keshav Puram(Red Line:15)-T5
+Keshav Puram(Red Line:15)-T6
+Keshav Puram(Red Line:15)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 6
+Pul Bangash(Red Line:10)-T1
+Pratap Nagar(Red Line:11)-T2
+Shastri Nagar(Red Line:12)-T3
+Inder Lok(Red Line:13)-T4
+Kanhaiya Nagar(Red Line:14)-T5
+Keshav Puram(Red Line:15)-T6
+Keshav Puram(Red Line:15)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 7
+Tis Hazari(Red Line:9)-T1
+Pul Bangash(Red Line:10)-T2
+Pratap Nagar(Red Line:11)-T3
+Shastri Nagar(Red Line:12)-T4
+Inder Lok(Red Line:13)-T5
+Kanhaiya Nagar(Red Line:14)-T6
+Keshav Puram(Red Line:15)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 8
+Kashmere Gate(Red Line:8)-T1
+Tis Hazari(Red Line:9)-T2
+Pul Bangash(Red Line:10)-T3
+Pratap Nagar(Red Line:11)-T4
+Shastri Nagar(Red Line:12)-T5
+Inder Lok(Red Line:13)-T6
+Kanhaiya Nagar(Red Line:14)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 9
+Kashmere Gate(Violet Line:1)-T1
+Tis Hazari(Red Line:9)-T2
+Pul Bangash(Red Line:10)-T3
+Pratap Nagar(Red Line:11)-T4
+Shastri Nagar(Red Line:12)-T5
+Inder Lok(Red Line:13)-T6
+Kanhaiya Nagar(Red Line:14)-T7
+Keshav Puram(Red Line:15)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 10
+Lal Quila(Violet Line:2)-T1
+Kashmere Gate(Red Line:8)-T2
+Tis Hazari(Red Line:9)-T3
+Pul Bangash(Red Line:10)-T4
+Pratap Nagar(Red Line:11)-T5
+Shastri Nagar(Red Line:12)-T6
+Inder Lok(Red Line:13)-T7
+Kanhaiya Nagar(Red Line:14)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 11
+Jama Masjid(Violet Line:3)-T1
+Kashmere Gate(Violet Line:1)-T2
+Tis Hazari(Red Line:9)-T3
+Pul Bangash(Red Line:10)-T4
+Pratap Nagar(Red Line:11)-T5
+Shastri Nagar(Red Line:12)-T6
+Inder Lok(Red Line:13)-T7
+Kanhaiya Nagar(Red Line:14)-T8
+Keshav Puram(Red Line:15)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 12
+Delhi Gate(Violet Line:4)-T1
+Lal Quila(Violet Line:2)-T2
+Kashmere Gate(Red Line:8)-T3
+Tis Hazari(Red Line:9)-T4
+Pul Bangash(Red Line:10)-T5
+Pratap Nagar(Red Line:11)-T6
+Shastri Nagar(Red Line:12)-T7
+Inder Lok(Red Line:13)-T8
+Kanhaiya Nagar(Red Line:14)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 13
+ITO(Violet Line:5)-T1
+Jama Masjid(Violet Line:3)-T2
+Kashmere Gate(Violet Line:1)-T3
+Tis Hazari(Red Line:9)-T4
+Pul Bangash(Red Line:10)-T5
+Pratap Nagar(Red Line:11)-T6
+Shastri Nagar(Red Line:12)-T7
+Inder Lok(Red Line:13)-T8
+Kanhaiya Nagar(Red Line:14)-T9
+Keshav Puram(Red Line:15)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 14
+Mandi House(Violet Line:6)-T1
+Delhi Gate(Violet Line:4)-T2
+Lal Quila(Violet Line:2)-T3
+Kashmere Gate(Red Line:8)-T4
+Tis Hazari(Red Line:9)-T5
+Pul Bangash(Red Line:10)-T6
+Pratap Nagar(Red Line:11)-T7
+Shastri Nagar(Red Line:12)-T8
+Inder Lok(Red Line:13)-T9
+Kanhaiya Nagar(Red Line:14)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 15
+Mandi House(Blue Line:31)-T1
+Delhi Gate(Violet Line:4)-T2
+Lal Quila(Violet Line:2)-T3
+Kashmere Gate(Violet Line:1)-T4
+Tis Hazari(Red Line:9)-T5
+Pul Bangash(Red Line:10)-T6
+Pratap Nagar(Red Line:11)-T7
+Shastri Nagar(Red Line:12)-T8
+Inder Lok(Red Line:13)-T9
+Kanhaiya Nagar(Red Line:14)-T10
+Keshav Puram(Red Line:15)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 16
+Pragati Maidan(Blue Line:32)-T1
+ITO(Violet Line:5)-T2
+Jama Masjid(Violet Line:3)-T3
+Lal Quila(Violet Line:2)-T4
+Kashmere Gate(Red Line:8)-T5
+Tis Hazari(Red Line:9)-T6
+Pul Bangash(Red Line:10)-T7
+Pratap Nagar(Red Line:11)-T8
+Shastri Nagar(Red Line:12)-T9
+Inder Lok(Red Line:13)-T10
+Kanhaiya Nagar(Red Line:14)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 17
+Indraprastha(Blue Line:33)-T1
+Mandi House(Violet Line:6)-T2
+Delhi Gate(Violet Line:4)-T3
+Jama Masjid(Violet Line:3)-T4
+Kashmere Gate(Violet Line:1)-T5
+Tis Hazari(Red Line:9)-T6
+Pul Bangash(Red Line:10)-T7
+Pratap Nagar(Red Line:11)-T8
+Shastri Nagar(Red Line:12)-T9
+Inder Lok(Red Line:13)-T10
+Kanhaiya Nagar(Red Line:14)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 18
+Yamuna Bank(Blue Line:34)-T1
+Mandi House(Blue Line:31)-T2
+Delhi Gate(Violet Line:4)-T3
+Jama Masjid(Violet Line:3)-T4
+Kashmere Gate(Violet Line:1)-T5
+Tis Hazari(Red Line:9)-T6
+Pul Bangash(Red Line:10)-T7
+Pratap Nagar(Red Line:11)-T8
+Shastri Nagar(Red Line:12)-T9
+Inder Lok(Red Line:13)-T10
+Kanhaiya Nagar(Red Line:14)-T11
+Keshav Puram(Red Line:15)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 19
+Akshardham(Blue Line:35)-T1
+Pragati Maidan(Blue Line:32)-T2
+ITO(Violet Line:5)-T3
+Delhi Gate(Violet Line:4)-T4
+Lal Quila(Violet Line:2)-T5
+Kashmere Gate(Red Line:8)-T6
+Tis Hazari(Red Line:9)-T7
+Pul Bangash(Red Line:10)-T8
+Pratap Nagar(Red Line:11)-T9
+Shastri Nagar(Red Line:12)-T10
+Inder Lok(Red Line:13)-T11
+Kanhaiya Nagar(Red Line:14)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 20
+Mayur Vihar-1(Blue Line:36)-T1
+Indraprastha(Blue Line:33)-T2
+Mandi House(Violet Line:6)-T3
+ITO(Violet Line:5)-T4
+Jama Masjid(Violet Line:3)-T5
+Kashmere Gate(Violet Line:1)-T6
+Tis Hazari(Red Line:9)-T7
+Pul Bangash(Red Line:10)-T8
+Pratap Nagar(Red Line:11)-T9
+Shastri Nagar(Red Line:12)-T10
+Inder Lok(Red Line:13)-T11
+Kanhaiya Nagar(Red Line:14)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 21
+Mayur Vihar-1(Blue Line:36)-T1
+Yamuna Bank(Blue Line:34)-T2
+Mandi House(Blue Line:31)-T3
+ITO(Violet Line:5)-T4
+Jama Masjid(Violet Line:3)-T5
+Kashmere Gate(Violet Line:1)-T6
+Tis Hazari(Red Line:9)-T7
+Pul Bangash(Red Line:10)-T8
+Pratap Nagar(Red Line:11)-T9
+Shastri Nagar(Red Line:12)-T10
+Inder Lok(Red Line:13)-T11
+Kanhaiya Nagar(Red Line:14)-T12
+Keshav Puram(Red Line:15)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 22
+Mayur Vihar-1(Blue Line:36)-T1
+Akshardham(Blue Line:35)-T2
+Pragati Maidan(Blue Line:32)-T3
+Mandi House(Violet Line:6)-T4
+Delhi Gate(Violet Line:4)-T5
+Lal Quila(Violet Line:2)-T6
+Kashmere Gate(Red Line:8)-T7
+Tis Hazari(Red Line:9)-T8
+Pul Bangash(Red Line:10)-T9
+Pratap Nagar(Red Line:11)-T10
+Shastri Nagar(Red Line:12)-T11
+Inder Lok(Red Line:13)-T12
+Kanhaiya Nagar(Red Line:14)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 23
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Indraprastha(Blue Line:33)-T3
+Mandi House(Blue Line:31)-T4
+Delhi Gate(Violet Line:4)-T5
+Lal Quila(Violet Line:2)-T6
+Kashmere Gate(Violet Line:1)-T7
+Tis Hazari(Red Line:9)-T8
+Pul Bangash(Red Line:10)-T9
+Pratap Nagar(Red Line:11)-T10
+Shastri Nagar(Red Line:12)-T11
+Inder Lok(Red Line:13)-T12
+Kanhaiya Nagar(Red Line:14)-T13
+Keshav Puram(Red Line:15)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 24
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Yamuna Bank(Blue Line:34)-T3
+Pragati Maidan(Blue Line:32)-T4
+ITO(Violet Line:5)-T5
+Jama Masjid(Violet Line:3)-T6
+Lal Quila(Violet Line:2)-T7
+Kashmere Gate(Red Line:8)-T8
+Tis Hazari(Red Line:9)-T9
+Pul Bangash(Red Line:10)-T10
+Pratap Nagar(Red Line:11)-T11
+Shastri Nagar(Red Line:12)-T12
+Inder Lok(Red Line:13)-T13
+Kanhaiya Nagar(Red Line:14)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 25
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Akshardham(Blue Line:35)-T3
+Indraprastha(Blue Line:33)-T4
+Mandi House(Violet Line:6)-T5
+Delhi Gate(Violet Line:4)-T6
+Jama Masjid(Violet Line:3)-T7
+Kashmere Gate(Violet Line:1)-T8
+Tis Hazari(Red Line:9)-T9
+Pul Bangash(Red Line:10)-T10
+Pratap Nagar(Red Line:11)-T11
+Shastri Nagar(Red Line:12)-T12
+Inder Lok(Red Line:13)-T13
+Kanhaiya Nagar(Red Line:14)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 26
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Yamuna Bank(Blue Line:34)-T4
+Mandi House(Blue Line:31)-T5
+Delhi Gate(Violet Line:4)-T6
+Jama Masjid(Violet Line:3)-T7
+Kashmere Gate(Violet Line:1)-T8
+Tis Hazari(Red Line:9)-T9
+Pul Bangash(Red Line:10)-T10
+Pratap Nagar(Red Line:11)-T11
+Shastri Nagar(Red Line:12)-T12
+Inder Lok(Red Line:13)-T13
+Kanhaiya Nagar(Red Line:14)-T14
+Keshav Puram(Red Line:15)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 27
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Akshardham(Blue Line:35)-T4
+Pragati Maidan(Blue Line:32)-T5
+ITO(Violet Line:5)-T6
+Delhi Gate(Violet Line:4)-T7
+Lal Quila(Violet Line:2)-T8
+Kashmere Gate(Red Line:8)-T9
+Tis Hazari(Red Line:9)-T10
+Pul Bangash(Red Line:10)-T11
+Pratap Nagar(Red Line:11)-T12
+Shastri Nagar(Red Line:12)-T13
+Inder Lok(Red Line:13)-T14
+Kanhaiya Nagar(Red Line:14)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 28
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Indraprastha(Blue Line:33)-T5
+Mandi House(Violet Line:6)-T6
+ITO(Violet Line:5)-T7
+Jama Masjid(Violet Line:3)-T8
+Kashmere Gate(Violet Line:1)-T9
+Tis Hazari(Red Line:9)-T10
+Pul Bangash(Red Line:10)-T11
+Pratap Nagar(Red Line:11)-T12
+Shastri Nagar(Red Line:12)-T13
+Inder Lok(Red Line:13)-T14
+Kanhaiya Nagar(Red Line:14)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 29
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Yamuna Bank(Blue Line:34)-T5
+Mandi House(Blue Line:31)-T6
+ITO(Violet Line:5)-T7
+Jama Masjid(Violet Line:3)-T8
+Kashmere Gate(Violet Line:1)-T9
+Tis Hazari(Red Line:9)-T10
+Pul Bangash(Red Line:10)-T11
+Pratap Nagar(Red Line:11)-T12
+Shastri Nagar(Red Line:12)-T13
+Inder Lok(Red Line:13)-T14
+Kanhaiya Nagar(Red Line:14)-T15
+Keshav Puram(Red Line:15)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 30
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Akshardham(Blue Line:35)-T5
+Pragati Maidan(Blue Line:32)-T6
+Mandi House(Violet Line:6)-T7
+Delhi Gate(Violet Line:4)-T8
+Lal Quila(Violet Line:2)-T9
+Kashmere Gate(Red Line:8)-T10
+Tis Hazari(Red Line:9)-T11
+Pul Bangash(Red Line:10)-T12
+Pratap Nagar(Red Line:11)-T13
+Shastri Nagar(Red Line:12)-T14
+Inder Lok(Red Line:13)-T15
+Kanhaiya Nagar(Red Line:14)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 31
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Indraprastha(Blue Line:33)-T6
+Mandi House(Blue Line:31)-T7
+Delhi Gate(Violet Line:4)-T8
+Lal Quila(Violet Line:2)-T9
+Kashmere Gate(Violet Line:1)-T10
+Tis Hazari(Red Line:9)-T11
+Pul Bangash(Red Line:10)-T12
+Pratap Nagar(Red Line:11)-T13
+Shastri Nagar(Red Line:12)-T14
+Inder Lok(Red Line:13)-T15
+Kanhaiya Nagar(Red Line:14)-T16
+Keshav Puram(Red Line:15)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 32
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Yamuna Bank(Blue Line:34)-T6
+Pragati Maidan(Blue Line:32)-T7
+ITO(Violet Line:5)-T8
+Jama Masjid(Violet Line:3)-T9
+Lal Quila(Violet Line:2)-T10
+Kashmere Gate(Red Line:8)-T11
+Tis Hazari(Red Line:9)-T12
+Pul Bangash(Red Line:10)-T13
+Pratap Nagar(Red Line:11)-T14
+Shastri Nagar(Red Line:12)-T15
+Inder Lok(Red Line:13)-T16
+Kanhaiya Nagar(Red Line:14)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 33
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Akshardham(Blue Line:35)-T6
+Indraprastha(Blue Line:33)-T7
+Mandi House(Violet Line:6)-T8
+Delhi Gate(Violet Line:4)-T9
+Jama Masjid(Violet Line:3)-T10
+Kashmere Gate(Violet Line:1)-T11
+Tis Hazari(Red Line:9)-T12
+Pul Bangash(Red Line:10)-T13
+Pratap Nagar(Red Line:11)-T14
+Shastri Nagar(Red Line:12)-T15
+Inder Lok(Red Line:13)-T16
+Kanhaiya Nagar(Red Line:14)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 34
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Yamuna Bank(Blue Line:34)-T7
+Mandi House(Blue Line:31)-T8
+Delhi Gate(Violet Line:4)-T9
+Jama Masjid(Violet Line:3)-T10
+Kashmere Gate(Violet Line:1)-T11
+Tis Hazari(Red Line:9)-T12
+Pul Bangash(Red Line:10)-T13
+Pratap Nagar(Red Line:11)-T14
+Shastri Nagar(Red Line:12)-T15
+Inder Lok(Red Line:13)-T16
+Kanhaiya Nagar(Red Line:14)-T17
+Keshav Puram(Red Line:15)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 35
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Akshardham(Blue Line:35)-T7
+Pragati Maidan(Blue Line:32)-T8
+ITO(Violet Line:5)-T9
+Delhi Gate(Violet Line:4)-T10
+Lal Quila(Violet Line:2)-T11
+Kashmere Gate(Red Line:8)-T12
+Tis Hazari(Red Line:9)-T13
+Pul Bangash(Red Line:10)-T14
+Pratap Nagar(Red Line:11)-T15
+Shastri Nagar(Red Line:12)-T16
+Inder Lok(Red Line:13)-T17
+Kanhaiya Nagar(Red Line:14)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 36
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Indraprastha(Blue Line:33)-T8
+Mandi House(Violet Line:6)-T9
+ITO(Violet Line:5)-T10
+Jama Masjid(Violet Line:3)-T11
+Kashmere Gate(Violet Line:1)-T12
+Tis Hazari(Red Line:9)-T13
+Pul Bangash(Red Line:10)-T14
+Pratap Nagar(Red Line:11)-T15
+Shastri Nagar(Red Line:12)-T16
+Inder Lok(Red Line:13)-T17
+Kanhaiya Nagar(Red Line:14)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 37
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Yamuna Bank(Blue Line:34)-T8
+Mandi House(Blue Line:31)-T9
+ITO(Violet Line:5)-T10
+Jama Masjid(Violet Line:3)-T11
+Kashmere Gate(Violet Line:1)-T12
+Tis Hazari(Red Line:9)-T13
+Pul Bangash(Red Line:10)-T14
+Pratap Nagar(Red Line:11)-T15
+Shastri Nagar(Red Line:12)-T16
+Inder Lok(Red Line:13)-T17
+Kanhaiya Nagar(Red Line:14)-T18
+Keshav Puram(Red Line:15)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 38
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Akshardham(Blue Line:35)-T8
+Pragati Maidan(Blue Line:32)-T9
+Mandi House(Violet Line:6)-T10
+Delhi Gate(Violet Line:4)-T11
+Lal Quila(Violet Line:2)-T12
+Kashmere Gate(Red Line:8)-T13
+Tis Hazari(Red Line:9)-T14
+Pul Bangash(Red Line:10)-T15
+Pratap Nagar(Red Line:11)-T16
+Shastri Nagar(Red Line:12)-T17
+Inder Lok(Red Line:13)-T18
+Kanhaiya Nagar(Red Line:14)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 39
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Indraprastha(Blue Line:33)-T9
+Mandi House(Blue Line:31)-T10
+Delhi Gate(Violet Line:4)-T11
+Lal Quila(Violet Line:2)-T12
+Kashmere Gate(Violet Line:1)-T13
+Tis Hazari(Red Line:9)-T14
+Pul Bangash(Red Line:10)-T15
+Pratap Nagar(Red Line:11)-T16
+Shastri Nagar(Red Line:12)-T17
+Inder Lok(Red Line:13)-T18
+Kanhaiya Nagar(Red Line:14)-T19
+Keshav Puram(Red Line:15)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 40
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Yamuna Bank(Blue Line:34)-T9
+Pragati Maidan(Blue Line:32)-T10
+ITO(Violet Line:5)-T11
+Jama Masjid(Violet Line:3)-T12
+Lal Quila(Violet Line:2)-T13
+Kashmere Gate(Red Line:8)-T14
+Tis Hazari(Red Line:9)-T15
+Pul Bangash(Red Line:10)-T16
+Pratap Nagar(Red Line:11)-T17
+Shastri Nagar(Red Line:12)-T18
+Inder Lok(Red Line:13)-T19
+Kanhaiya Nagar(Red Line:14)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 41
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Akshardham(Blue Line:35)-T9
+Indraprastha(Blue Line:33)-T10
+Mandi House(Violet Line:6)-T11
+Delhi Gate(Violet Line:4)-T12
+Jama Masjid(Violet Line:3)-T13
+Kashmere Gate(Violet Line:1)-T14
+Tis Hazari(Red Line:9)-T15
+Pul Bangash(Red Line:10)-T16
+Pratap Nagar(Red Line:11)-T17
+Shastri Nagar(Red Line:12)-T18
+Inder Lok(Red Line:13)-T19
+Kanhaiya Nagar(Red Line:14)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 42
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Yamuna Bank(Blue Line:34)-T10
+Mandi House(Blue Line:31)-T11
+Delhi Gate(Violet Line:4)-T12
+Jama Masjid(Violet Line:3)-T13
+Kashmere Gate(Violet Line:1)-T14
+Tis Hazari(Red Line:9)-T15
+Pul Bangash(Red Line:10)-T16
+Pratap Nagar(Red Line:11)-T17
+Shastri Nagar(Red Line:12)-T18
+Inder Lok(Red Line:13)-T19
+Kanhaiya Nagar(Red Line:14)-T20
+Keshav Puram(Red Line:15)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 43
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Akshardham(Blue Line:35)-T10
+Pragati Maidan(Blue Line:32)-T11
+ITO(Violet Line:5)-T12
+Delhi Gate(Violet Line:4)-T13
+Lal Quila(Violet Line:2)-T14
+Kashmere Gate(Red Line:8)-T15
+Tis Hazari(Red Line:9)-T16
+Pul Bangash(Red Line:10)-T17
+Pratap Nagar(Red Line:11)-T18
+Shastri Nagar(Red Line:12)-T19
+Inder Lok(Red Line:13)-T20
+Kanhaiya Nagar(Red Line:14)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 44
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Indraprastha(Blue Line:33)-T11
+Mandi House(Violet Line:6)-T12
+ITO(Violet Line:5)-T13
+Jama Masjid(Violet Line:3)-T14
+Kashmere Gate(Violet Line:1)-T15
+Tis Hazari(Red Line:9)-T16
+Pul Bangash(Red Line:10)-T17
+Pratap Nagar(Red Line:11)-T18
+Shastri Nagar(Red Line:12)-T19
+Inder Lok(Red Line:13)-T20
+Kanhaiya Nagar(Red Line:14)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 45
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Yamuna Bank(Blue Line:34)-T11
+Mandi House(Blue Line:31)-T12
+ITO(Violet Line:5)-T13
+Jama Masjid(Violet Line:3)-T14
+Kashmere Gate(Violet Line:1)-T15
+Tis Hazari(Red Line:9)-T16
+Pul Bangash(Red Line:10)-T17
+Pratap Nagar(Red Line:11)-T18
+Shastri Nagar(Red Line:12)-T19
+Inder Lok(Red Line:13)-T20
+Kanhaiya Nagar(Red Line:14)-T21
+Keshav Puram(Red Line:15)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 46
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Akshardham(Blue Line:35)-T11
+Pragati Maidan(Blue Line:32)-T12
+Mandi House(Violet Line:6)-T13
+Delhi Gate(Violet Line:4)-T14
+Lal Quila(Violet Line:2)-T15
+Kashmere Gate(Red Line:8)-T16
+Tis Hazari(Red Line:9)-T17
+Pul Bangash(Red Line:10)-T18
+Pratap Nagar(Red Line:11)-T19
+Shastri Nagar(Red Line:12)-T20
+Inder Lok(Red Line:13)-T21
+Kanhaiya Nagar(Red Line:14)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 47
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Indraprastha(Blue Line:33)-T12
+Mandi House(Blue Line:31)-T13
+Delhi Gate(Violet Line:4)-T14
+Lal Quila(Violet Line:2)-T15
+Kashmere Gate(Violet Line:1)-T16
+Tis Hazari(Red Line:9)-T17
+Pul Bangash(Red Line:10)-T18
+Pratap Nagar(Red Line:11)-T19
+Shastri Nagar(Red Line:12)-T20
+Inder Lok(Red Line:13)-T21
+Kanhaiya Nagar(Red Line:14)-T22
+Keshav Puram(Red Line:15)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 48
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Yamuna Bank(Blue Line:34)-T12
+Pragati Maidan(Blue Line:32)-T13
+ITO(Violet Line:5)-T14
+Jama Masjid(Violet Line:3)-T15
+Lal Quila(Violet Line:2)-T16
+Kashmere Gate(Red Line:8)-T17
+Tis Hazari(Red Line:9)-T18
+Pul Bangash(Red Line:10)-T19
+Pratap Nagar(Red Line:11)-T20
+Shastri Nagar(Red Line:12)-T21
+Inder Lok(Red Line:13)-T22
+Kanhaiya Nagar(Red Line:14)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 49
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Akshardham(Blue Line:35)-T12
+Indraprastha(Blue Line:33)-T13
+Mandi House(Violet Line:6)-T14
+Delhi Gate(Violet Line:4)-T15
+Jama Masjid(Violet Line:3)-T16
+Kashmere Gate(Violet Line:1)-T17
+Tis Hazari(Red Line:9)-T18
+Pul Bangash(Red Line:10)-T19
+Pratap Nagar(Red Line:11)-T20
+Shastri Nagar(Red Line:12)-T21
+Inder Lok(Red Line:13)-T22
+Kanhaiya Nagar(Red Line:14)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 50
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Yamuna Bank(Blue Line:34)-T13
+Mandi House(Blue Line:31)-T14
+Delhi Gate(Violet Line:4)-T15
+Jama Masjid(Violet Line:3)-T16
+Kashmere Gate(Violet Line:1)-T17
+Tis Hazari(Red Line:9)-T18
+Pul Bangash(Red Line:10)-T19
+Pratap Nagar(Red Line:11)-T20
+Shastri Nagar(Red Line:12)-T21
+Inder Lok(Red Line:13)-T22
+Kanhaiya Nagar(Red Line:14)-T23
+Keshav Puram(Red Line:15)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 51
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Akshardham(Blue Line:35)-T13
+Pragati Maidan(Blue Line:32)-T14
+ITO(Violet Line:5)-T15
+Delhi Gate(Violet Line:4)-T16
+Lal Quila(Violet Line:2)-T17
+Kashmere Gate(Red Line:8)-T18
+Tis Hazari(Red Line:9)-T19
+Pul Bangash(Red Line:10)-T20
+Pratap Nagar(Red Line:11)-T21
+Shastri Nagar(Red Line:12)-T22
+Inder Lok(Red Line:13)-T23
+Kanhaiya Nagar(Red Line:14)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 52
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Indraprastha(Blue Line:33)-T14
+Mandi House(Violet Line:6)-T15
+ITO(Violet Line:5)-T16
+Jama Masjid(Violet Line:3)-T17
+Kashmere Gate(Violet Line:1)-T18
+Tis Hazari(Red Line:9)-T19
+Pul Bangash(Red Line:10)-T20
+Pratap Nagar(Red Line:11)-T21
+Shastri Nagar(Red Line:12)-T22
+Inder Lok(Red Line:13)-T23
+Kanhaiya Nagar(Red Line:14)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 53
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Yamuna Bank(Blue Line:34)-T14
+Mandi House(Blue Line:31)-T15
+ITO(Violet Line:5)-T16
+Jama Masjid(Violet Line:3)-T17
+Kashmere Gate(Violet Line:1)-T18
+Tis Hazari(Red Line:9)-T19
+Pul Bangash(Red Line:10)-T20
+Pratap Nagar(Red Line:11)-T21
+Shastri Nagar(Red Line:12)-T22
+Inder Lok(Red Line:13)-T23
+Kanhaiya Nagar(Red Line:14)-T24
+Keshav Puram(Red Line:15)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 54
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Akshardham(Blue Line:35)-T14
+Pragati Maidan(Blue Line:32)-T15
+Mandi House(Violet Line:6)-T16
+Delhi Gate(Violet Line:4)-T17
+Lal Quila(Violet Line:2)-T18
+Kashmere Gate(Red Line:8)-T19
+Tis Hazari(Red Line:9)-T20
+Pul Bangash(Red Line:10)-T21
+Pratap Nagar(Red Line:11)-T22
+Shastri Nagar(Red Line:12)-T23
+Inder Lok(Red Line:13)-T24
+Kanhaiya Nagar(Red Line:14)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 55
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Indraprastha(Blue Line:33)-T15
+Mandi House(Blue Line:31)-T16
+Delhi Gate(Violet Line:4)-T17
+Lal Quila(Violet Line:2)-T18
+Kashmere Gate(Violet Line:1)-T19
+Tis Hazari(Red Line:9)-T20
+Pul Bangash(Red Line:10)-T21
+Pratap Nagar(Red Line:11)-T22
+Shastri Nagar(Red Line:12)-T23
+Inder Lok(Red Line:13)-T24
+Kanhaiya Nagar(Red Line:14)-T25
+Keshav Puram(Red Line:15)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 56
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Yamuna Bank(Blue Line:34)-T15
+Pragati Maidan(Blue Line:32)-T16
+ITO(Violet Line:5)-T17
+Jama Masjid(Violet Line:3)-T18
+Lal Quila(Violet Line:2)-T19
+Kashmere Gate(Red Line:8)-T20
+Tis Hazari(Red Line:9)-T21
+Pul Bangash(Red Line:10)-T22
+Pratap Nagar(Red Line:11)-T23
+Shastri Nagar(Red Line:12)-T24
+Inder Lok(Red Line:13)-T25
+Kanhaiya Nagar(Red Line:14)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 57
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Akshardham(Blue Line:35)-T15
+Indraprastha(Blue Line:33)-T16
+Mandi House(Violet Line:6)-T17
+Delhi Gate(Violet Line:4)-T18
+Jama Masjid(Violet Line:3)-T19
+Kashmere Gate(Violet Line:1)-T20
+Tis Hazari(Red Line:9)-T21
+Pul Bangash(Red Line:10)-T22
+Pratap Nagar(Red Line:11)-T23
+Shastri Nagar(Red Line:12)-T24
+Inder Lok(Red Line:13)-T25
+Kanhaiya Nagar(Red Line:14)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 58
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Yamuna Bank(Blue Line:34)-T16
+Mandi House(Blue Line:31)-T17
+Delhi Gate(Violet Line:4)-T18
+Jama Masjid(Violet Line:3)-T19
+Kashmere Gate(Violet Line:1)-T20
+Tis Hazari(Red Line:9)-T21
+Pul Bangash(Red Line:10)-T22
+Pratap Nagar(Red Line:11)-T23
+Shastri Nagar(Red Line:12)-T24
+Inder Lok(Red Line:13)-T25
+Kanhaiya Nagar(Red Line:14)-T26
+Keshav Puram(Red Line:15)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 59
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Akshardham(Blue Line:35)-T16
+Pragati Maidan(Blue Line:32)-T17
+ITO(Violet Line:5)-T18
+Delhi Gate(Violet Line:4)-T19
+Lal Quila(Violet Line:2)-T20
+Kashmere Gate(Red Line:8)-T21
+Tis Hazari(Red Line:9)-T22
+Pul Bangash(Red Line:10)-T23
+Pratap Nagar(Red Line:11)-T24
+Shastri Nagar(Red Line:12)-T25
+Inder Lok(Red Line:13)-T26
+Kanhaiya Nagar(Red Line:14)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 60
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Indraprastha(Blue Line:33)-T17
+Mandi House(Violet Line:6)-T18
+ITO(Violet Line:5)-T19
+Jama Masjid(Violet Line:3)-T20
+Kashmere Gate(Violet Line:1)-T21
+Tis Hazari(Red Line:9)-T22
+Pul Bangash(Red Line:10)-T23
+Pratap Nagar(Red Line:11)-T24
+Shastri Nagar(Red Line:12)-T25
+Inder Lok(Red Line:13)-T26
+Kanhaiya Nagar(Red Line:14)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 61
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Yamuna Bank(Blue Line:34)-T17
+Mandi House(Blue Line:31)-T18
+ITO(Violet Line:5)-T19
+Jama Masjid(Violet Line:3)-T20
+Kashmere Gate(Violet Line:1)-T21
+Tis Hazari(Red Line:9)-T22
+Pul Bangash(Red Line:10)-T23
+Pratap Nagar(Red Line:11)-T24
+Shastri Nagar(Red Line:12)-T25
+Inder Lok(Red Line:13)-T26
+Kanhaiya Nagar(Red Line:14)-T27
+Keshav Puram(Red Line:15)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 62
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Akshardham(Blue Line:35)-T17
+Pragati Maidan(Blue Line:32)-T18
+Mandi House(Violet Line:6)-T19
+Delhi Gate(Violet Line:4)-T20
+Lal Quila(Violet Line:2)-T21
+Kashmere Gate(Red Line:8)-T22
+Tis Hazari(Red Line:9)-T23
+Pul Bangash(Red Line:10)-T24
+Pratap Nagar(Red Line:11)-T25
+Shastri Nagar(Red Line:12)-T26
+Inder Lok(Red Line:13)-T27
+Kanhaiya Nagar(Red Line:14)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 63
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Indraprastha(Blue Line:33)-T18
+Mandi House(Blue Line:31)-T19
+Delhi Gate(Violet Line:4)-T20
+Lal Quila(Violet Line:2)-T21
+Kashmere Gate(Violet Line:1)-T22
+Tis Hazari(Red Line:9)-T23
+Pul Bangash(Red Line:10)-T24
+Pratap Nagar(Red Line:11)-T25
+Shastri Nagar(Red Line:12)-T26
+Inder Lok(Red Line:13)-T27
+Kanhaiya Nagar(Red Line:14)-T28
+Keshav Puram(Red Line:15)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 64
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Yamuna Bank(Blue Line:34)-T18
+Pragati Maidan(Blue Line:32)-T19
+ITO(Violet Line:5)-T20
+Jama Masjid(Violet Line:3)-T21
+Lal Quila(Violet Line:2)-T22
+Kashmere Gate(Red Line:8)-T23
+Tis Hazari(Red Line:9)-T24
+Pul Bangash(Red Line:10)-T25
+Pratap Nagar(Red Line:11)-T26
+Shastri Nagar(Red Line:12)-T27
+Inder Lok(Red Line:13)-T28
+Kanhaiya Nagar(Red Line:14)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 65
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Akshardham(Blue Line:35)-T18
+Indraprastha(Blue Line:33)-T19
+Mandi House(Violet Line:6)-T20
+Delhi Gate(Violet Line:4)-T21
+Jama Masjid(Violet Line:3)-T22
+Kashmere Gate(Violet Line:1)-T23
+Tis Hazari(Red Line:9)-T24
+Pul Bangash(Red Line:10)-T25
+Pratap Nagar(Red Line:11)-T26
+Shastri Nagar(Red Line:12)-T27
+Inder Lok(Red Line:13)-T28
+Kanhaiya Nagar(Red Line:14)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 66
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Yamuna Bank(Blue Line:34)-T19
+Mandi House(Blue Line:31)-T20
+Delhi Gate(Violet Line:4)-T21
+Jama Masjid(Violet Line:3)-T22
+Kashmere Gate(Violet Line:1)-T23
+Tis Hazari(Red Line:9)-T24
+Pul Bangash(Red Line:10)-T25
+Pratap Nagar(Red Line:11)-T26
+Shastri Nagar(Red Line:12)-T27
+Inder Lok(Red Line:13)-T28
+Kanhaiya Nagar(Red Line:14)-T29
+Keshav Puram(Red Line:15)-T30
+
+turn: 67
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Akshardham(Blue Line:35)-T19
+Pragati Maidan(Blue Line:32)-T20
+ITO(Violet Line:5)-T21
+Delhi Gate(Violet Line:4)-T22
+Lal Quila(Violet Line:2)-T23
+Kashmere Gate(Red Line:8)-T24
+Tis Hazari(Red Line:9)-T25
+Pul Bangash(Red Line:10)-T26
+Pratap Nagar(Red Line:11)-T27
+Shastri Nagar(Red Line:12)-T28
+Inder Lok(Red Line:13)-T29
+Kanhaiya Nagar(Red Line:14)-T30
+
+turn: 68
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Indraprastha(Blue Line:33)-T20
+Mandi House(Violet Line:6)-T21
+ITO(Violet Line:5)-T22
+Jama Masjid(Violet Line:3)-T23
+Kashmere Gate(Violet Line:1)-T24
+Tis Hazari(Red Line:9)-T25
+Pul Bangash(Red Line:10)-T26
+Pratap Nagar(Red Line:11)-T27
+Shastri Nagar(Red Line:12)-T28
+Inder Lok(Red Line:13)-T29
+Kanhaiya Nagar(Red Line:14)-T30
+
+turn: 69
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Yamuna Bank(Blue Line:34)-T20
+Mandi House(Blue Line:31)-T21
+ITO(Violet Line:5)-T22
+Jama Masjid(Violet Line:3)-T23
+Kashmere Gate(Violet Line:1)-T24
+Tis Hazari(Red Line:9)-T25
+Pul Bangash(Red Line:10)-T26
+Pratap Nagar(Red Line:11)-T27
+Shastri Nagar(Red Line:12)-T28
+Inder Lok(Red Line:13)-T29
+Kanhaiya Nagar(Red Line:14)-T30
+
+turn: 70
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Akshardham(Blue Line:35)-T20
+Pragati Maidan(Blue Line:32)-T21
+Mandi House(Violet Line:6)-T22
+Delhi Gate(Violet Line:4)-T23
+Lal Quila(Violet Line:2)-T24
+Kashmere Gate(Red Line:8)-T25
+Tis Hazari(Red Line:9)-T26
+Pul Bangash(Red Line:10)-T27
+Pratap Nagar(Red Line:11)-T28
+Shastri Nagar(Red Line:12)-T29
+Inder Lok(Red Line:13)-T30
+
+turn: 71
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Indraprastha(Blue Line:33)-T21
+Mandi House(Blue Line:31)-T22
+Delhi Gate(Violet Line:4)-T23
+Lal Quila(Violet Line:2)-T24
+Kashmere Gate(Violet Line:1)-T25
+Tis Hazari(Red Line:9)-T26
+Pul Bangash(Red Line:10)-T27
+Pratap Nagar(Red Line:11)-T28
+Shastri Nagar(Red Line:12)-T29
+Inder Lok(Red Line:13)-T30
+
+turn: 72
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Yamuna Bank(Blue Line:34)-T21
+Pragati Maidan(Blue Line:32)-T22
+ITO(Violet Line:5)-T23
+Jama Masjid(Violet Line:3)-T24
+Lal Quila(Violet Line:2)-T25
+Kashmere Gate(Red Line:8)-T26
+Tis Hazari(Red Line:9)-T27
+Pul Bangash(Red Line:10)-T28
+Pratap Nagar(Red Line:11)-T29
+Shastri Nagar(Red Line:12)-T30
+
+turn: 73
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Akshardham(Blue Line:35)-T21
+Indraprastha(Blue Line:33)-T22
+Mandi House(Violet Line:6)-T23
+Delhi Gate(Violet Line:4)-T24
+Jama Masjid(Violet Line:3)-T25
+Kashmere Gate(Violet Line:1)-T26
+Tis Hazari(Red Line:9)-T27
+Pul Bangash(Red Line:10)-T28
+Pratap Nagar(Red Line:11)-T29
+Shastri Nagar(Red Line:12)-T30
+
+turn: 74
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Yamuna Bank(Blue Line:34)-T22
+Mandi House(Blue Line:31)-T23
+Delhi Gate(Violet Line:4)-T24
+Jama Masjid(Violet Line:3)-T25
+Kashmere Gate(Violet Line:1)-T26
+Tis Hazari(Red Line:9)-T27
+Pul Bangash(Red Line:10)-T28
+Pratap Nagar(Red Line:11)-T29
+Shastri Nagar(Red Line:12)-T30
+
+turn: 75
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Akshardham(Blue Line:35)-T22
+Pragati Maidan(Blue Line:32)-T23
+ITO(Violet Line:5)-T24
+Delhi Gate(Violet Line:4)-T25
+Lal Quila(Violet Line:2)-T26
+Kashmere Gate(Red Line:8)-T27
+Tis Hazari(Red Line:9)-T28
+Pul Bangash(Red Line:10)-T29
+Pratap Nagar(Red Line:11)-T30
+
+turn: 76
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Indraprastha(Blue Line:33)-T23
+Mandi House(Violet Line:6)-T24
+ITO(Violet Line:5)-T25
+Jama Masjid(Violet Line:3)-T26
+Kashmere Gate(Violet Line:1)-T27
+Tis Hazari(Red Line:9)-T28
+Pul Bangash(Red Line:10)-T29
+Pratap Nagar(Red Line:11)-T30
+
+turn: 77
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Yamuna Bank(Blue Line:34)-T23
+Mandi House(Blue Line:31)-T24
+ITO(Violet Line:5)-T25
+Jama Masjid(Violet Line:3)-T26
+Kashmere Gate(Violet Line:1)-T27
+Tis Hazari(Red Line:9)-T28
+Pul Bangash(Red Line:10)-T29
+Pratap Nagar(Red Line:11)-T30
+
+turn: 78
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Akshardham(Blue Line:35)-T23
+Pragati Maidan(Blue Line:32)-T24
+Mandi House(Violet Line:6)-T25
+Delhi Gate(Violet Line:4)-T26
+Lal Quila(Violet Line:2)-T27
+Kashmere Gate(Red Line:8)-T28
+Tis Hazari(Red Line:9)-T29
+Pul Bangash(Red Line:10)-T30
+
+turn: 79
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Indraprastha(Blue Line:33)-T24
+Mandi House(Blue Line:31)-T25
+Delhi Gate(Violet Line:4)-T26
+Lal Quila(Violet Line:2)-T27
+Kashmere Gate(Violet Line:1)-T28
+Tis Hazari(Red Line:9)-T29
+Pul Bangash(Red Line:10)-T30
+
+turn: 80
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Yamuna Bank(Blue Line:34)-T24
+Pragati Maidan(Blue Line:32)-T25
+ITO(Violet Line:5)-T26
+Jama Masjid(Violet Line:3)-T27
+Lal Quila(Violet Line:2)-T28
+Kashmere Gate(Red Line:8)-T29
+Tis Hazari(Red Line:9)-T30
+
+turn: 81
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Akshardham(Blue Line:35)-T24
+Indraprastha(Blue Line:33)-T25
+Mandi House(Violet Line:6)-T26
+Delhi Gate(Violet Line:4)-T27
+Jama Masjid(Violet Line:3)-T28
+Kashmere Gate(Violet Line:1)-T29
+Tis Hazari(Red Line:9)-T30
+
+turn: 82
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Yamuna Bank(Blue Line:34)-T25
+Mandi House(Blue Line:31)-T26
+Delhi Gate(Violet Line:4)-T27
+Jama Masjid(Violet Line:3)-T28
+Kashmere Gate(Violet Line:1)-T29
+Tis Hazari(Red Line:9)-T30
+
+turn: 83
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Akshardham(Blue Line:35)-T25
+Pragati Maidan(Blue Line:32)-T26
+ITO(Violet Line:5)-T27
+Delhi Gate(Violet Line:4)-T28
+Lal Quila(Violet Line:2)-T29
+Kashmere Gate(Red Line:8)-T30
+
+turn: 84
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Indraprastha(Blue Line:33)-T26
+Mandi House(Violet Line:6)-T27
+ITO(Violet Line:5)-T28
+Jama Masjid(Violet Line:3)-T29
+Kashmere Gate(Violet Line:1)-T30
+
+turn: 85
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Yamuna Bank(Blue Line:34)-T26
+Mandi House(Blue Line:31)-T27
+ITO(Violet Line:5)-T28
+Jama Masjid(Violet Line:3)-T29
+Kashmere Gate(Violet Line:1)-T30
+
+turn: 86
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Akshardham(Blue Line:35)-T26
+Pragati Maidan(Blue Line:32)-T27
+Mandi House(Violet Line:6)-T28
+Delhi Gate(Violet Line:4)-T29
+Lal Quila(Violet Line:2)-T30
+
+turn: 87
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Indraprastha(Blue Line:33)-T27
+Mandi House(Blue Line:31)-T28
+Delhi Gate(Violet Line:4)-T29
+Lal Quila(Violet Line:2)-T30
+
+turn: 88
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Yamuna Bank(Blue Line:34)-T27
+Pragati Maidan(Blue Line:32)-T28
+ITO(Violet Line:5)-T29
+Jama Masjid(Violet Line:3)-T30
+
+turn: 89
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Akshardham(Blue Line:35)-T27
+Indraprastha(Blue Line:33)-T28
+Mandi House(Violet Line:6)-T29
+Delhi Gate(Violet Line:4)-T30
+
+turn: 90
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Yamuna Bank(Blue Line:34)-T28
+Mandi House(Blue Line:31)-T29
+Delhi Gate(Violet Line:4)-T30
+
+turn: 91
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Akshardham(Blue Line:35)-T28
+Pragati Maidan(Blue Line:32)-T29
+ITO(Violet Line:5)-T30
+
+turn: 92
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Mayur Vihar-1(Blue Line:36)-T28
+Indraprastha(Blue Line:33)-T29
+Mandi House(Violet Line:6)-T30
+
+turn: 93
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Mayur Vihar-1(Blue Line:36)-T28
+Yamuna Bank(Blue Line:34)-T29
+Mandi House(Blue Line:31)-T30
+
+turn: 94
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Mayur Vihar-1(Blue Line:36)-T28
+Akshardham(Blue Line:35)-T29
+Pragati Maidan(Blue Line:32)-T30
+
+turn: 95
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Mayur Vihar-1(Blue Line:36)-T28
+Mayur Vihar-1(Blue Line:36)-T29
+Indraprastha(Blue Line:33)-T30
+
+turn: 96
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Mayur Vihar-1(Blue Line:36)-T28
+Mayur Vihar-1(Blue Line:36)-T29
+Yamuna Bank(Blue Line:34)-T30
+
+turn: 97
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Mayur Vihar-1(Blue Line:36)-T28
+Mayur Vihar-1(Blue Line:36)-T29
+Akshardham(Blue Line:35)-T30
+
+turn: 98
+Mayur Vihar-1(Blue Line:36)-T1
+Mayur Vihar-1(Blue Line:36)-T2
+Mayur Vihar-1(Blue Line:36)-T3
+Mayur Vihar-1(Blue Line:36)-T4
+Mayur Vihar-1(Blue Line:36)-T5
+Mayur Vihar-1(Blue Line:36)-T6
+Mayur Vihar-1(Blue Line:36)-T7
+Mayur Vihar-1(Blue Line:36)-T8
+Mayur Vihar-1(Blue Line:36)-T9
+Mayur Vihar-1(Blue Line:36)-T10
+Mayur Vihar-1(Blue Line:36)-T11
+Mayur Vihar-1(Blue Line:36)-T12
+Mayur Vihar-1(Blue Line:36)-T13
+Mayur Vihar-1(Blue Line:36)-T14
+Mayur Vihar-1(Blue Line:36)-T15
+Mayur Vihar-1(Blue Line:36)-T16
+Mayur Vihar-1(Blue Line:36)-T17
+Mayur Vihar-1(Blue Line:36)-T18
+Mayur Vihar-1(Blue Line:36)-T19
+Mayur Vihar-1(Blue Line:36)-T20
+Mayur Vihar-1(Blue Line:36)-T21
+Mayur Vihar-1(Blue Line:36)-T22
+Mayur Vihar-1(Blue Line:36)-T23
+Mayur Vihar-1(Blue Line:36)-T24
+Mayur Vihar-1(Blue Line:36)-T25
+Mayur Vihar-1(Blue Line:36)-T26
+Mayur Vihar-1(Blue Line:36)-T27
+Mayur Vihar-1(Blue Line:36)-T28
+Mayur Vihar-1(Blue Line:36)-T29
+Mayur Vihar-1(Blue Line:36)-T30
+
 </pre>
 </div>
 </div>
