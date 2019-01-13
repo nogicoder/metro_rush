@@ -28,7 +28,7 @@ OrderedDict([(delhi, 1)])
 >>> station.add_train('T2')
 Traceback (most recent call last):
 ...
-ValueError: The station already reach its capacity limit 1
+ValueError: The delhi station already reach its capacity limit 1
 
 """Check remove_train method and error handling"""
 >>> station.remove_train('T1')
@@ -91,7 +91,7 @@ Blue Line
 >>> train.switch_line(yline)
 Traceback (most recent call last):
 ...
-ValueError: Yellow Line does not pass through station saphire
+ValueError: Blue Line does not pass through station saphire
 
 """Check class Metro"""
 >>> metro = Metro('Delhi')
@@ -100,8 +100,6 @@ ValueError: Yellow Line does not pass through station saphire
 >>> metro.build_graph('delhi')
 >>> print(metro.name)
 Delhi
->>> print(metro.trains)
-{1: Train #1: Keshav Puram station, Red Line, 2: Train #2: Keshav Puram station, Red Line, 3: Train #3: Keshav Puram station, Red Line, 4: Train #4: Keshav Puram station, Red Line, 5: Train #5: Keshav Puram station, Red Line, 6: Train #6: Keshav Puram station, Red Line, 7: Train #7: Keshav Puram station, Red Line, 8: Train #8: Keshav Puram station, Red Line, 9: Train #9: Keshav Puram station, Red Line, 10: Train #10: Keshav Puram station, Red Line, 11: Train #11: Keshav Puram station, Red Line, 12: Train #12: Keshav Puram station, Red Line, 13: Train #13: Keshav Puram station, Red Line, 14: Train #14: Keshav Puram station, Red Line, 15: Train #15: Keshav Puram station, Red Line, 16: Train #16: Keshav Puram station, Red Line, 17: Train #17: Keshav Puram station, Red Line, 18: Train #18: Keshav Puram station, Red Line, 19: Train #19: Keshav Puram station, Red Line, 20: Train #20: Keshav Puram station, Red Line, 21: Train #21: Keshav Puram station, Red Line, 22: Train #22: Keshav Puram station, Red Line, 23: Train #23: Keshav Puram station, Red Line, 24: Train #24: Keshav Puram station, Red Line, 25: Train #25: Keshav Puram station, Red Line, 26: Train #26: Keshav Puram station, Red Line, 27: Train #27: Keshav Puram station, Red Line, 28: Train #28: Keshav Puram station, Red Line, 29: Train #29: Keshav Puram station, Red Line, 30: Train #30: Keshav Puram station, Red Line}
 >>> print(metro.lines)
 {'Red Line': Red Line, 'Violet Line': Violet Line, 'Green Line': Green Line, 'Pink Line': Pink Line, 'Yellow Line': Yellow Line, 'Airport Express': Airport Express, 'Blue Line': Blue Line, 'Magenta Line': Magenta Line, 'Rapid': Rapid}
 >>> print(metro.stations)
@@ -112,3 +110,16 @@ Delhi
 Keshav Puram
 >>> print(metro.stop)
 Mayur Vihar-1
+>>> metro.print_train_location(1)
+Keshav Puram(Red Line:15)-T1
+
+"""Test class SwitchLine"""
+>>> act1 = SwitchLine(train, rline, bline)
+>>> act1.execute()
+Traceback (most recent call last):
+...
+ValueError: The train number 1 not at line_1 (Red Line)
+>>> act1 = SwitchLine(train, bline, rline)
+>>> act1.execute()
+>>> act2 = MoveTrain(train, station1, station2)
+>>> act2.execute()
