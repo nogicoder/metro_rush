@@ -37,7 +37,6 @@ class Station:
     def remove_train(self, train):
         try:
             self.trains.remove(train)
-
         except KeyError:
             pass
 
@@ -100,9 +99,9 @@ class Train:
                              "station {}".format(self.line, self.station))
 
     def __str__(self):
-        return 'Train #{}: {} station, {}'.format(self.id, self.station, self.line)
+        return 'Train #{}: {} station, {}'.format(self.id, self.station, self.line)    
 
-
+    __repr__ = __str__
 class Line:
 
     def __init__(self, name):
@@ -163,13 +162,9 @@ class Metro:
         self.turns = 0 # counter for each turn
         self.start = None # starting station
         self.stop = None # ending station
-
-        self.build_graph('delhi')
-        self.edges = self.get_edges()
         
     def build_graph(self, filename):
         try:
-            
             # set initial value for a line
             line = None
 
@@ -245,26 +240,6 @@ class Metro:
 
         except (FileNotFoundError, NameError, ValueError):
             stderr.write("Invalid File")
-
-    def get_edges(self):  # """UPDATE"""
-        nodes = self.transferpoints.copy()
-        edges = []
-        if self.start.name not in nodes:
-            nodes[self.start.name] = self.start
-        if self.stop.name not in nodes:
-            nodes[self.stop.name] = self.stop
-        for line_name, line_object in self.lines.items():
-            temp = []
-            for name, station in nodes.items():
-                if station in line_object._stationtoidx:
-                    temp.append(station)
-            temp = sorted(
-                temp, key=lambda station: line_object._stationtoidx[station])
-            for i in range(1, len(temp)):
-                weight = abs(line_object._stationtoidx[temp[i - 1]] -
-                             line_object._stationtoidx[temp[i]])
-                edges.append((temp[i - 1], temp[i], weight))
-        return edges
 
     def update(self, actionlist):
         """
@@ -344,11 +319,14 @@ class MoveTrain:
     def execute(self):
         # check pre-conditions
 
+        # update station state
+        self.station_1.remove_train(self.train)
+
         # update train state
         self.train.move_station(self.station_2)
 
-        # update station state
-        self.station_1.remove_train(self.train)
+        
+
         self.station_2.add_train(self.train)
 
     def __str__(self):

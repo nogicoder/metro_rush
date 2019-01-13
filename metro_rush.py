@@ -5,7 +5,7 @@ from PathFinder import *
 
 class Turn:
 
-    def __init__(self, idx, stations):
+    def __init__(self, idx, stations, metro):
         self.name = 'turn' + str(idx)
         self.idx = idx
         self.stations = stations
@@ -36,7 +36,7 @@ def run_it(metro):
             for station in line._stationtoidx:
                     if station.trains:
                         occupied_station.append(station)
-        turn = Turn(counter, occupied_station)
+        turn = Turn(counter, occupied_station, metro)
         turns.append(turn)
         break
     return turns
@@ -51,6 +51,7 @@ def main():
     for station, line in converted_path:
         station_list.append(station)
     move_it(metro, station_list)
-    print(run_it(metro))
+    run_it(metro)
+
 
 main()

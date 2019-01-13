@@ -4,12 +4,32 @@ from collections import deque, namedtuple
 class PathFinding:
 
     def __init__(self, metro, alt=0):
-        self.edges = self.make_edges(metro.edges, alt)
+        self.edges = self.make_edges(self.get_edges(metro), alt)
         self.start = metro.start
         self.stop = metro.stop
         self.lines = metro.lines
         self.path, self.cost = self.find_shortest_path()
         self.converted_path = self.convert_path(self.path)
+    
+    def get_edges(self, metro):
+        nodes = metro.transferpoints.copy()
+        edges = []
+        if metro.start.name not in nodes:
+            nodes[metro.start.name] = metro.start
+        if metro.stop.name not in nodes:
+            nodes[metro.stop.name] = metro.stop
+        for line_name, line_object in metro.lines.items():
+            temp = []
+            for name, station in nodes.items():
+                if station in line_object._stationtoidx:
+                    temp.append(station)
+            temp = sorted(
+                temp, key=lambda station: line_object._stationtoidx[station])
+            for i in range(1, len(temp)):
+                weight = abs(line_object._stationtoidx[temp[i - 1]] -
+                             line_object._stationtoidx[temp[i]])
+                edges.append((temp[i - 1], temp[i], weight))
+        return edges
 
     @property
     def nodes(self):
