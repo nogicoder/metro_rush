@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from collections import deque, namedtuple
 from metro import MoveTrain, SwitchLine
 
@@ -120,14 +121,16 @@ class PathFinding:
         switch_turn = []
         start_turn = []
 
+        # iterate through each train
         for train in self.metro.trains.values():
-            line = train.line
-
-            if start_turn:
+            line = train.line  # current line
+            print(start_turn)
+            if start_turn:  # if 2nd turn -> increase turn by 1
                 turn = start_turn[-1] + 1
-            else:
+            else:  # if start_turn empty -> 1st turn, move the first train only
                 turn = 0
-
+            
+            # increase counter during Switching line (special case)
             while turn in switch_turn:
                 turn += 1
             start_turn.append(turn)

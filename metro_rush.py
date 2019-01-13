@@ -6,12 +6,15 @@ from PathFinder import *
 def main():
     metro = Metro('Delhi')
     metro.build_graph('delhi')
-    path, cost = PathFinding(metro).path, PathFinding(metro).cost
-    converted_path = PathFinding(metro).converted_path
-    print((path, cost))
-    print(converted_path)
+    pathfinding = PathFinding(metro)
+    actionlist = pathfinding.get_action_list_1()
 
-
+    for turn in actionlist:
+        # inital state
+        metro.update(turn)
+        print('turn:', metro.turns)
+        metro.print_train_location(-1)
+        print()
 
 if __name__ == '__main__':
     main()

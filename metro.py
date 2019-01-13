@@ -148,9 +148,6 @@ class Metro:
         self.turns = 0
         self.start = None
         self.stop = None
-
-        self.build_graph('delhi')
-        self.edges = self.get_edges()
         
     def build_graph(self, filename):
         try:
@@ -237,26 +234,6 @@ class Metro:
 
         except (FileNotFoundError, NameError, ValueError):
             stderr.write("Invalid File")
-
-    def get_edges(self):
-        nodes = self.transferpoints.copy()
-        edges = []
-        if self.start.name not in nodes:
-            nodes[self.start.name] = self.start
-        if self.stop.name not in nodes:
-            nodes[self.stop.name] = self.stop
-        for line_name, line in self.lines.items():
-            temp = []
-            for station in nodes.values():
-                if station in line:
-                    temp.append(station)
-            temp = sorted(temp,
-                          key=lambda station: line.get_station_idx(station))
-            for i in range(1, len(temp)):
-                weight = abs(line.get_station_idx(temp[i - 1]) -
-                             line.get_station_idx(temp[i]))
-                edges.append((temp[i - 1], temp[i], weight))
-        return edges
 
     def update(self, turn):
         """
