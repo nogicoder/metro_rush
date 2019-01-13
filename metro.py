@@ -94,6 +94,7 @@ class Line:
         self.name = name
         self._stationtoidx = OrderedDict()
         self._idxtostation = {}
+        self.stations = self._stationtoidx
 
     def get_station_idx(self, station):
         return self._stationtoidx[station]
