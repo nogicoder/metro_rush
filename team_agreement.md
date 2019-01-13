@@ -50,6 +50,7 @@
                         (-) vnam: Visualizing Train
                         (-) nlequan: Finished train movement -> Employing algorithm
                 _DEADLINE: Sat Jan 12/2019
+        + Sun Jan 13/2019: Finalizing and refactoring codes
 
 6. The features you want to implement and how they interface together:
         + The core algorithm: Train moving along 1 path with subsequence train lining up
@@ -57,5 +58,5 @@
         + Pyglet representation of the train moving and metro system, based on the objects and actions defined in the previous features
         Note: 
                 + Handle cases of data file that might lead to error
-                + Test cases for each code blocks (consider doctest)
-                + Handle argument passing for multi algo options and custom max_train numbers
+                + Test cases for each code blocks (doctest)
+                + Handle argument passing
