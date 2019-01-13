@@ -1,6 +1,5 @@
 #!/usr/bin/env python3 
 from collections import OrderedDict # """UPDATE"""
-from PathFinder import *
 from sys import stderr
 
 
@@ -15,8 +14,9 @@ class Station:
         if len(self.trains) < self.max_trains:
             self.trains.add(train)
         else:
-            raise ValueError('The station already reach its capacity '
-                             'limit {}'.format(self.max_trains))
+            raise ValueError('The {} station already reach its capacity '
+                             'limit {}'.format(self.name,
+                                               self.max_trains))
 
     def remove_train(self, train):
         try:
@@ -195,29 +195,39 @@ class Metro:
                             # set condition only if name is available also
                             if len(args) == 2:
                                 station_id, station_name = args
-                                new_station = Station(station_name, line)
-                                line.add_station(new_station)
-                                self.stations[station_name] = new_station
+                                station = Station(station_name, line)
+                                line.add_station(station)
+                                self.stations[station_name] = station
 
                                 # check station id in case the given id in the
                                 # file do not obey the indexing rule
-                                if line.get_station_idx(new_station) != int(station_id):
+                                if line.get_station_idx(station) != int(station_id):
                                     raise ValueError("invalid station id")
 
                             # in case of transfer point
                             elif len(args) == 4:
                                 station_id, station_name, _, line_2_name = args
-                                new_station = Station(station_name, line)
-                                line.add_station(new_station)
-                                self.stations[station_name] = new_station
 
-                                self.transferpoints[station_name] = new_station
+                                if station_name in self.stations:
+                                    station = self.stations[station_name]
+                                else:
+                                    station = Station(station_name, line)
+                                    self.stations[station_name] = station
+
+                                line.add_station(station)
+
+                                # check station id in case the given id in the
+                                # file do not obey the indexing rule
+                                if line.get_station_idx(station) != int(station_id):
+                                    raise ValueError("invalid station id")
+
+                                self.transferpoints[station_name] = station
 
                                 # if line_2 not in list yet -> add to list
                                 if line_2_name not in self.lines:
                                     self.lines[line_2_name] = Line(line_2_name)
 
-                                new_station.add_line(self.lines[line_2_name])
+                                station.add_line(self.lines[line_2_name])
 
             # Based on max_train number
             for i in range(num_trains):
@@ -248,12 +258,13 @@ class Metro:
                 edges.append((temp[i - 1], temp[i], weight))
         return edges
 
-    def update(self, actionlist):
+    def update(self, turn):
         """
         Execute all actions in one turn
         :param actionlist: list of actions
         """
-        for action in actionlist:
+        for action in turn:
+            # print(action)
             action.execute()
         self.turns += 1
 
