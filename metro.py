@@ -1,31 +1,15 @@
 #!/usr/bin/env python3 
- 
 from collections import OrderedDict # """UPDATE"""
 from PathFinder import *
 from sys import stderr
 
 
-"""
-Modeling system by using GRAPH-PLAN method
-
-Key concepts:
-- The system is defined by its environment and states.
-- The environment is a set of predefined rules that modeling the system.
-- The state of a system is a set of parameters that from it, we can fully
-indicate the status / state of the system given its environment.
-- There's a predefined action list that will change the system state
-- Each action will have a set of pre-condition. An action is only allow to
-execute if the current state satisfied the pre-conditions.
-"""
-
-
-# define environment
 class Station:
     def __init__(self, name, line, max_trains=1):
         self.name = name
-        self.lines = {line} # store as set with 1 item
+        self.lines = {line}
         self.max_trains = max_trains
-        self.trains = set() # store as set with no item yet
+        self.trains = set()
 
     def add_train(self, train):
         if len(self.trains) < self.max_trains:
@@ -42,7 +26,7 @@ class Station:
             pass
 
     def add_line(self, line):
-        self.lines.add(line) # add new line to the lines set
+        self.lines.add(line)
 
     def find_adjacent_nodes(self, line):
         if line not in self.lines:
@@ -78,6 +62,7 @@ class Station:
         return self.name
 
     __repr__ = __str__
+
 
 class Train:
     def __init__(self, train_id, line, station_id):
@@ -155,49 +140,42 @@ class Line:
 class Metro:
 
     def __init__(self, name):
-        self.name = name # name of the Metro System
-        self.trains = {} # dict that contain trains
-        self.lines = {} # dict that contain lines
-        self.stations = {} # dict that contain all stations of a line
-        self.transferpoints = {} # dict that contain all the transfer points
-        self.turns = 0 # counter for each turn
-        self.start = None # starting station
-        self.stop = None # ending station
+        self.name = name
+        self.trains = {}
+        self.lines = {}
+        self.stations = {}
+        self.transferpoints = {}
+        self.turns = 0
+        self.start = None
+        self.stop = None
 
         self.build_graph('delhi')
         self.edges = self.get_edges()
         
     def build_graph(self, filename):
         try:
-            
-            # set initial value for a line
             line = None
-
-            # open the file
             with open(filename, 'r') as f:
-
-                # iterate through each line in file
                 for row in f:
-
-                    # strip whitespace to the right
                     row = row.rstrip()
 
                     # get name of Line and create a Line instance
                     if row.startswith('#'):
-                        line_name = row[1:] # get line name
-                        if line_name not in self.lines: # if line not added yet
-                            line = Line(line_name) # create a Line instance
-                            self.lines[line_name] = line # set key/value binding as line_name/ Line object
-                        else: # if line already added beforehand (in the case of transfer point below)
-                            line = self.lines[line_name] # set line as the previous added Line object 
+                        line_name = row[1:]
+                        if line_name not in self.lines:
+                            line = Line(line_name)
+                            self.lines[line_name] = line
 
-                    # get the starting station's linename and id   
+                        else:
+                            line = self.lines[line_name]
+
+                    # get the starting station's line name and id
                     elif row.startswith('START='): # if line start with 'START'
-                        s_line, s_id = [arg.strip() for arg in row[6:].split(':')] # get the 1st and 2nd item from the list excluded 'START=' and split at ':'
-                        self.start = self.lines[s_line][int(s_id)] # get the Station object based on its id (as the key of the sub-dict)
-                        self.start.max_trains = float('inf') # set max_trains of starting station to infinity
+                        s_line, s_id = [arg.strip() for arg in row[6:].split(':')]
+                        self.start = self.lines[s_line][int(s_id)]
+                        self.start.max_trains = float('inf')
 
-                    # get the ending station's linename and id - Same with above block
+                    # get the ending station's line name and id
                     elif row.startswith('END='):
                         e_line, e_id = [arg.strip() for arg in row[4:].split(':')]
                         self.stop = self.lines[e_line][int(e_id)]
@@ -210,59 +188,63 @@ class Metro:
                     # get the station name and create a Station instance
                     elif len(row) != 0:
                         args = [arg.strip() for arg in row.split(':')]
-                        if args[0].isdigit(): # set condition only if id is a number
-                            if len(args) == 2:  # set condition only if name is available also
-                                station_id, station_name = args
-                                new_station = Station(station_name, line) # create a Station instance with its Line object
-                                line.add_station(new_station) # add the Station object to the Line object
-                                self.stations[station_name] = new_station # add the Station object to the stations dict
 
-                                # check station id in case the given id in the file do not obey the indexing rule (skipping or re-index the station)
+                        # set condition only if id is a number
+                        if args[0].isdigit():
+
+                            # set condition only if name is available also
+                            if len(args) == 2:
+                                station_id, station_name = args
+                                new_station = Station(station_name, line)
+                                line.add_station(new_station)
+                                self.stations[station_name] = new_station
+
+                                # check station id in case the given id in the
+                                # file do not obey the indexing rule
                                 if line.get_station_idx(new_station) != int(station_id):
                                     raise ValueError("invalid station id")
 
-
-                            elif len(args) == 4: # in case of transfer point
+                            # in case of transfer point
+                            elif len(args) == 4:
                                 station_id, station_name, _, line_2_name = args
                                 new_station = Station(station_name, line)
                                 line.add_station(new_station)
                                 self.stations[station_name] = new_station
 
-                                self.transferpoints[station_name] = new_station # add the station to transferpoints dict
+                                self.transferpoints[station_name] = new_station
 
                                 # if line_2 not in list yet -> add to list
                                 if line_2_name not in self.lines:
                                     self.lines[line_2_name] = Line(line_2_name)
 
-                                # add the Line object represents the 2nd line of the transfer point to the Station object
                                 new_station.add_line(self.lines[line_2_name])
 
             # Based on max_train number
             for i in range(num_trains):
-                new_train = Train(i + 1, self.lines[s_line], int(s_id)) # create Train object
-                self.start.add_train(new_train) # add trains to the starting station
-                self.trains[i + 1] = new_train # add trains to the train dict based on id
+                new_train = Train(i + 1, self.lines[s_line], int(s_id))
+                self.start.add_train(new_train)
+                self.trains[i + 1] = new_train
 
         except (FileNotFoundError, NameError, ValueError):
             stderr.write("Invalid File")
 
-    def get_edges(self):  # """UPDATE"""
+    def get_edges(self):
         nodes = self.transferpoints.copy()
         edges = []
         if self.start.name not in nodes:
             nodes[self.start.name] = self.start
         if self.stop.name not in nodes:
             nodes[self.stop.name] = self.stop
-        for line_name, line_object in self.lines.items():
+        for line_name, line in self.lines.items():
             temp = []
-            for name, station in nodes.items():
-                if station in line_object._stationtoidx:
+            for station in nodes.values():
+                if station in line:
                     temp.append(station)
-            temp = sorted(
-                temp, key=lambda station: line_object._stationtoidx[station])
+            temp = sorted(temp,
+                          key=lambda station: line.get_station_idx(station))
             for i in range(1, len(temp)):
-                weight = abs(line_object._stationtoidx[temp[i - 1]] -
-                             line_object._stationtoidx[temp[i]])
+                weight = abs(line.get_station_idx(temp[i - 1]) -
+                             line.get_station_idx(temp[i]))
                 edges.append((temp[i - 1], temp[i], weight))
         return edges
 
@@ -280,16 +262,6 @@ class Metro:
         train_id = -1, print all train
         otherwise, print train by its id
         """
-        """
-        <station_name>(<line_name>:<station_id>)-<train_label>
-        Tagore Garden(Blue Line:18)-T15
-        """
-        # if train_id != -1:
-        #     print(self.trains[train_id])
-        # else:
-        #     for train in self.trains.values():
-        #         print(train)
-
         if train_id != -1:
             trains = [self.trains[train_id]]
         else:
@@ -303,14 +275,6 @@ class Metro:
             print("{}({}:{})-T{}".format(station.name,
                                          line.name, station_id, train_id))
 
-
-# define action
-# Note:
-# The pre-conditions checking is partially handled in targeted objects (Train,
-# Station, etc.)
-# May consider moving all pre-condition checking task to action classes then
-# make the associated method in targeted object private. The convention should
-# be only using action class to change the environment states.
 
 class SwitchLine:
     def __init__(self, train: Train, line_1: Line, line_2: Line):
@@ -342,7 +306,6 @@ class MoveTrain:
         self.station_2 = station_2
 
     def execute(self):
-        # check pre-conditions
 
         # update train state
         self.train.move_station(self.station_2)
